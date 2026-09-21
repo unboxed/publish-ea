@@ -119,21 +119,25 @@ def build_page(target_filename, front_matter, blocks, is_preview=False):
 
     parts.append("</head>\n\n")
 
-    # Body: header + phase banner
+    # Body: header + service nav + phase banner
     parts.append(header)
-    parts.append("\n")
 
     layout = front_matter.get("layout", "default")
 
-    if layout == "full-width":
-        parts.append(f"""
-    <nav class="app-service-nav" aria-label="Service">
-        <ul class="app-service-nav__list">
-            <li><a class="app-service-nav__link" href="{prefix}index.html">Documentation</a></li>
-            <li><a class="app-service-nav__link app-service-nav__link--active" href="#">{title}</a></li>
-        </ul>
-    </nav>
+    # Service nav with feedback link
+    parts.append(f"""
+  <nav class="app-service-nav" aria-label="Service">
+    <div class="govuk-width-container">
+      <ul class="app-service-nav__list">
+        <li><a class="app-service-nav__link" href="{prefix}index.html">Documentation</a></li>
+        <li><a class="app-service-nav__link" href="mailto:gdslocal-info@dsit.gov.uk">Contact GDS Local</a></li>
+        <li><a class="app-service-nav__link" href="mailto:gdslocal-info@dsit.gov.uk?subject=LGAM%20Feedback" data-feedback-trigger="usage">Give feedback</a></li>
+      </ul>
+    </div>
+  </nav>
 """)
+
+    if layout == "full-width":
         parts.append("  <div class=\"app-content-wrapper app-content-wrapper--full-width\">\n")
         parts.append("      <main class=\"app-main-content app-main-content--full-width\" id=\"main-content\" role=\"main\">\n")
         parts.append(blocks["main_content"])
@@ -169,6 +173,16 @@ def build_page(target_filename, front_matter, blocks, is_preview=False):
         parts.append("  </div>\n")
         parts.append("</details>\n")
 
+    # Per-page feedback link
+    encoded_title = title.replace(" ", "%20").replace("&", "%26")
+    parts.append(f"""
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <p class="govuk-body-s" style="color:#505a5f;">
+          Help improve this page —
+          <a class="govuk-link" href="mailto:gdslocal-info@dsit.gov.uk?subject=LGAM%20feedback:%20{encoded_title}" data-feedback-trigger="page" data-feedback-page="{title}">suggest a change</a>
+        </p>
+""")
+
     parts.append("\n      </main>\n")
     parts.append("  </div>\n\n")
 
@@ -192,6 +206,28 @@ def build_page(target_filename, front_matter, blocks, is_preview=False):
                 parts.append("\n  <script>\n")
                 parts.append(read_partial(partial_name))
                 parts.append("\n  </script>\n")
+
+    # Feedback modal dialog (progressive enhancement)
+    parts.append("""
+  <dialog id="lgam-feedback-dialog" class="lgam-feedback-dialog" aria-labelledby="feedback-modal-title" aria-modal="true">
+    <div class="lgam-feedback-dialog__header">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0" id="feedback-modal-title"></h2>
+      <button type="button" class="lgam-feedback-dialog__close" id="feedback-modal-close" aria-label="Close">&#215;</button>
+    </div>
+    <div class="lgam-feedback-dialog__body" id="feedback-modal-body"></div>
+    <div class="lgam-feedback-dialog__footer">
+      <div class="feedback-footer-info">
+        <p class="govuk-body-s govuk-!-margin-bottom-0" id="feedback-aggregate-count" aria-live="polite" aria-atomic="true"></p>
+        <p class="govuk-body-s govuk-!-margin-bottom-0" style="color:#505a5f;">This will open a pre-filled email in your email client.</p>
+      </div>
+      <div class="feedback-footer-actions">
+        <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" id="feedback-modal-cancel">Cancel</button>
+        <button type="button" class="govuk-button govuk-!-margin-bottom-0" id="feedback-modal-submit">Open in email</button>
+      </div>
+    </div>
+  </dialog>
+""")
+    parts.append(f'  <script src="{prefix}js/feedback-modal.js"></script>\n')
 
     parts.append("</body>\n</html>\n")
 

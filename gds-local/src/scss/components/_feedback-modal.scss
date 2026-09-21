@@ -1,0 +1,115 @@
+/* Feedback modal dialog — follows MoJ Design System pattern */
+
+.lgam-feedback-dialog {
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+  max-width: 820px;
+  width: calc(100% - 40px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.lgam-feedback-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lgam-feedback-dialog__header {
+  padding: 16px 20px;
+  background: #0b0c0c;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  h2 {
+    color: #ffffff;
+  }
+}
+
+.lgam-feedback-dialog__close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+}
+
+.lgam-feedback-dialog__body {
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+  mask-image: linear-gradient(to bottom, black calc(100% - 24px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 24px), transparent 100%);
+}
+
+.lgam-feedback-dialog__body:not([data-scrolled-bottom]) {
+  mask-image: linear-gradient(to bottom, black calc(100% - 24px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 24px), transparent 100%);
+}
+
+.lgam-feedback-dialog__body[data-scrolled-bottom="true"] {
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.lgam-feedback-dialog__footer {
+  padding: 12px 20px;
+  background: #f3f2f1;
+  border-top: 1px solid #b1b4b6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.feedback-footer-info {
+  font-size: 13px;
+  font-family: "GDS Transport", arial, sans-serif;
+  color: #505a5f;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feedback-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feedback-aggregate-count--warning {
+  color: #d4351c;
+}
+
+/* Two-column row layout for compact fields */
+.feedback-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.feedback-row__col {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .feedback-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* Prevent body scroll when dialog open */
+body.feedback-modal-open {
+  overflow: hidden;
+}
