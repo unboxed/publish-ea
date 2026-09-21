@@ -55,6 +55,15 @@
     </div>
   </header>
 
+  <nav class="app-service-nav" aria-label="Service">
+    <div class="govuk-width-container">
+      <ul class="app-service-nav__list">
+        <li><a class="app-service-nav__link" href="../../index.html">Documentation</a></li>
+        <li><a class="app-service-nav__link" href="mailto:gdslocal-info@dsit.gov.uk">Contact GDS Local</a></li>
+        <li><a class="app-service-nav__link" href="mailto:gdslocal-info@dsit.gov.uk?subject=LGAM%20Feedback" data-feedback-trigger="usage">Give feedback</a></li>
+      </ul>
+    </div>
+  </nav>
   <div class="app-content-wrapper">
     <nav class="app-sidebar" aria-label="Page navigation">
       <h2 class="app-navigation__heading">Contents</h2>
@@ -272,6 +281,12 @@
             <li><a href="../business-area/planning-and-development/index.html" class="govuk-link"><strong>Planning and Development</strong></a> — geospatial platform underpins planning applications, land charges, and local plan evidence</li>
           </ul>
 
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <p class="govuk-body-s" style="color:#505a5f;">
+          Help improve this page —
+          <a class="govuk-link" href="mailto:gdslocal-info@dsit.gov.uk?subject=LGAM%20feedback:%20Data%20%26%20Analytics" data-feedback-trigger="page" data-feedback-page="Data & Analytics">suggest a change</a>
+        </p>
+
       </main>
   </div>
 
@@ -297,7 +312,7 @@
             <!--<li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="#">Help</a></li>
             <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="#">Cookies</a></li>-->
             <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="mailto:gdslocal-info@dsit.gov.uk">Contact</a></li>
-            <!--<li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="#">Terms and conditions</a></li>-->
+            <!--<li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://forms.office.com/e/PLACEHOLDER">Complete our feedback survey</a></li>-->
             <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="/gds-local/accessibility-statement.html">Accessibility statement</a></li>
           </ul> 
           <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
@@ -316,5 +331,24 @@
   <script>
     window.GOVUKFrontend.initAll();
   </script>
+
+  <dialog id="lgam-feedback-dialog" class="lgam-feedback-dialog" aria-labelledby="feedback-modal-title" aria-modal="true">
+    <div class="lgam-feedback-dialog__header">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0" id="feedback-modal-title"></h2>
+      <button type="button" class="lgam-feedback-dialog__close" id="feedback-modal-close" aria-label="Close">&#215;</button>
+    </div>
+    <div class="lgam-feedback-dialog__body" id="feedback-modal-body"></div>
+    <div class="lgam-feedback-dialog__footer">
+      <div class="feedback-footer-info">
+        <p class="govuk-body-s govuk-!-margin-bottom-0" id="feedback-aggregate-count" aria-live="polite" aria-atomic="true"></p>
+        <p class="govuk-body-s govuk-!-margin-bottom-0" style="color:#505a5f;">This will open a pre-filled email in your email client.</p>
+      </div>
+      <div class="feedback-footer-actions">
+        <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" id="feedback-modal-cancel">Cancel</button>
+        <button type="button" class="govuk-button govuk-!-margin-bottom-0" id="feedback-modal-submit">Open in email</button>
+      </div>
+    </div>
+  </dialog>
+  <script src="../../js/feedback-modal.js"></script>
 </body>
 </html>

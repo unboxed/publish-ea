@@ -8,18 +8,18 @@ Work in this session is scoped to the `gds-local/` folder only. The parent `publ
 
 ## What This Is
 
-GDS Local is the **Local Government Architecture Model (LGAM)** — a 5-layer reference architecture for UK local government digital services. It is part of the wider PublishEA enterprise architecture resource library maintained by the GOV.UK Digital Backbone team.
+GDS Local is the **Local Government Architecture Model (LGAM)** — a 9-layer reference architecture for UK local government digital services. It is part of the wider PublishEA enterprise architecture resource library.
 
-The upstream repository is `https://github.com/govuk-digital-backbone/publish-ea`. Deployment is via **GitHub Pages** (auto-deploys on merge to main). Live at `architecture.cddo.cabinetoffice.gov.uk/gds-local/`.
+The upstream repository is `https://github.com/gds-dtx/publish-ea`. Deployment is via **GitHub Pages** (auto-deploys on merge to main). Live at `architecture.cddo.cabinetoffice.gov.uk/gds-local/`.
 
 ## Development
 
-This project uses the official `govuk-frontend` NPM package for styling and JavaScript.
+This project uses the official `govuk-frontend` NPM package for styling and JavaScript, plus `@ministryofjustice/frontend` for the feedback modal dialog component.
 
 **Prerequisites:**
-- Node.js (for `npm`)
+- Node.js (for `npm` and `npx`)
 - Python 3 (for the build script)
-- Dart Sass (installed globally via `npm install -g sass`)
+- Dart Sass (via `npx sass`, installed as a dependency of govuk-frontend)
 
 **Workflow:**
 1. Install dependencies: `npm install` (within `gds-local/`)
@@ -31,9 +31,13 @@ This project uses the official `govuk-frontend` NPM package for styling and Java
 
 To ensure updates to GOV.UK Frontend do not break LGAM customizations, we use an override-first approach:
 - **Never modify `govuk-frontend` files directly.**
-- We define our custom variables (e.g. `$govuk-brand-colour`) in `src/scss/_settings.scss`.
-- We import GOV.UK Frontend (`@import "govuk-frontend/dist/govuk/all"`) in `src/scss/application.scss`.
-- Component-specific overrides (like `_lgam-accordion.scss` and `_lgam-tags.scss`) are imported *after* the GOV.UK dependencies.
+- GOV.UK Frontend is imported via `@use` with configuration in `src/scss/application.scss`:
+  ```scss
+  @use "node_modules/govuk-frontend/dist/govuk/index" as * with (
+    $govuk-assets-path: "../assets/"
+  );
+  ```
+- Component-specific overrides (like `_lgam-accordion.scss`, `_lgam-tags.scss`, `_taxonomy-workbench.scss`) are imported *after* the GOV.UK dependency using `@import`.
 - Use `@extend` targeting vanilla classes (e.g. `@extend .govuk-tag`) or custom variables (`%lgam-tag-base`) whenever possible rather than duplicating CSS blocks.
 
 ### Build system for subpages
@@ -45,7 +49,7 @@ python3 _build/build.py
 ```
 
 This script:
-1. Compiles `src/scss/application.scss` to `css/application.css` using Dart Sass.
+1. Compiles `src/scss/application.scss` to `css/application.css` using Dart Sass (via `npx sass`).
 2. Copies the UMD JavaScript bundle (`all.bundle.js`) from `node_modules` to `js/govuk-frontend.min.js`.
 3. Assembles the output HTML files from `_build/_partials/` (header, footer) and `_build/_pages/` (content).
 
@@ -60,51 +64,85 @@ Each `_build/_pages/*.html` file has front matter and tagged content blocks:
 ```html
 ---
 title: Page Title
-caption: LGAM Capabilities    # or "LGAM Business Areas"
-status: published              # or "draft"
-description: "Summary outlining the purpose and content design concept of the page" # Optional, used in preview directory
-redirect_from:                 
-  - "old-path.html"            # Optional temporary shim. Do not use for new pages; intended to be removed once pages graduate to live.
+caption: LGAM Capabilities
+status: published
+description: "Summary outlining the purpose and content design concept of the page"
+layout: default
+parent: "../index.html"
+parent_title: "Parent Page"
+redirect_from:
+  - "old-path.html"
 ---
 <style>/* page-specific CSS */</style>
 <nav-contents><!-- sidebar Contents li items --></nav-contents>
 <main-content><!-- main page content --></main-content>
 <page-script>/* optional page-specific JS */</page-script>
+<page-modules>tenders</page-modules>
+<page-history><!-- optional version history --></page-history>
 ```
 
-- `status: published` — build.py adds a "View X detail →" link in the matching index.html item
-- `status: draft` — HTML is built (for preview) but no link appears in index.html
+**Front matter fields:**
+- `title` — page heading (required)
+- `caption` — subtitle / layer label (optional, shown in preview directory)
+- `status` — `published` | `draft` | `modified` (controls linking from index and build output location)
+- `description` — shown in the preview directory listing (optional)
+- `layout` — `default` (sidebar + main) or `full-width` (no sidebar)
+- `parent` / `parent_title` — back-link for hierarchical navigation (optional)
+- `redirect_from` — generates a redirect shim at the old path (optional)
 
-## Architecture: The 5-Layer Model
+**Content blocks:**
+- `<nav-contents>` — sidebar navigation list items
+- `<main-content>` — primary page content (required)
+- `<page-script>` — inline JavaScript (optional)
+- `<page-modules>` — comma-separated partial names to include (e.g. `tenders` loads `_partials/script-tenders.html`)
+- `<page-history>` — version history shown in a collapsible details element (optional)
 
-The LGAM describes local government services as a stack of five layers (top to bottom):
+**Statuses and index linking:**
+- `published` — built to root (live) AND preview/. `build.py` automatically adds a "View X detail →" link in the matching `index.html` section.
+- `draft` — built to preview/ only. No link appears in `index.html`.
+- `modified` — built to preview/ only (root keeps last-published version). Link remains in `index.html` pointing to the root (last-published) version.
 
-1. **Public Channels** — how citizens reach the council (Online, Phone, In Person, etc.)
-2. **Council Agents** — interfaces that handle interactions (Website, API Gateway, App, Human, etc.)
-3. **Capabilities** — reusable functional tools (Payments, Forms, Identity, Booking, Workflow, etc.)
-4. **Business Areas / Functions** — service domains (Planning, Housing, Adult Social Care, etc.) with optional granular Functions beneath them
-5. **IT Systems** — underlying technology (CRM, ERP, domain-specific systems)
+## Architecture: The 9-Layer Model
 
-Relationships flow downward: channels route to agents, agents use capabilities, capabilities support business areas, business areas are served by IT systems.
+The LGAM describes local government technology as a stack of nine layers (top to bottom):
+
+1. **Public Channels** — how citizens reach the council (Online, Phone, In Person, Post, etc.)
+2. **Council Interfaces** — interfaces that handle interactions (Website, API Gateway, App, Human, Chatbot, etc.)
+3. **Capabilities** — reusable functional tools (Payments, Forms, Identity, Booking, Workflow, Notifications, etc.)
+4. **Business Areas** — service domains (Planning, Housing, Adult Social Care, Children's Social Care, etc.)
+5. **Corporate Areas** — back-office functions (Finance, HR, Procurement, Legal, Facilities, etc.)
+6. **Foundational Technology** — underlying platforms subdivided into:
+   - Artificial Intelligence
+   - Developer and Operations Tooling
+   - End User and Productivity
+   - Service Management
+   - Infrastructure & Hosting
+7. **Integration** — data exchange, APIs, messaging, bulk data movement
+8. **Security** — cyber security, identity management, access control
+9. **Data and Information** — standards, sharing, analytics, registers
+
+Relationships flow downward: channels route to interfaces, interfaces use capabilities, capabilities support business/corporate areas, all underpinned by foundational technology, integration, security, and data layers.
 
 ## Key Files
 
 | File | Purpose |
 |---|---|
-| `index.html` | Main LGAM page — hand-authored, sidebar nav, coloured capability blocks |
+| `index.html` | Main LGAM page — hand-authored, sidebar nav, coloured layer blocks |
 | `gds-local-alt.html` | Interactive graph view using **Vis.js Network** — hand-authored |
-| `_build/build.py` | Build script — assembles subpages from partials + page sources |
-| `_build/_partials/` | Shared HTML fragments (header, footer, layout CSS, CDN fixes) |
+| `_build/build.py` | Build script — compiles SCSS, assembles subpages from partials + page sources |
+| `_build/_partials/` | Shared HTML fragments (header, footer, sidebar-lgam, script modules) |
 | `_build/_pages/` | Page source files (edit these to change subpage content) |
+| `_build/generate_taxonomy_workbench.py` | Generates the ESD→LGAM taxonomy mapping workbench page |
 | `preview/directory.html` | **Generated** — Local preview index grouping drafts and modifications |
-| `business-area/adult-social-care/index.html` | **Generated** — Example hierarchical taxonomy-aligned page |
-| `payments.html` | **Generated** — Example root-level page |
-| `resources/lgam-data.json` | Graph data (nodes + edges) without Function-level detail |
-| `resources/lgam-data-lgaFunctions.json` | Extended graph data including Function nodes |
+| `js/feedback-modal.js` | Progressive enhancement — feedback modal (MoJ dialog pattern) |
+| `js/govuk-frontend.min.js` | **Copied** — GOV.UK Frontend JS bundle |
+| `resources/` | JSON data models (multiple historical versions — see `resources/README.md` for inventory) |
+| `resources/taxonomy/` | ESD taxonomy data (functions, services, hierarchy, powers & duties, LGAM mapping) |
 
 ## Tech Stack & Asset Dependencies
 
-- **GOV.UK Frontend 6.x** (CSS + JS) compiled locally via npm/Sass — provides Design System components (accordions, details, header, footer, phase banner)
+- **GOV.UK Frontend 6.3** (CSS + JS) compiled locally via npm/Dart Sass — provides Design System components (accordions, details, header, footer, radios, textareas, tags)
+- **MoJ Frontend** (`@ministryofjustice/frontend`) — dialog pattern reference for the feedback modal
 - **Vis.js Network** via unpkg — interactive graph rendering in `gds-local-alt.html`
 - **Tailwind CSS** via CDN — used only in `gds-local-alt.html`
 - **GDS Transport** web font with Arial fallback
@@ -121,35 +159,51 @@ All pages initialise GOV.UK Frontend JS using local paths. `build.py` handles th
 
 All styling is managed in `src/scss/`. **Do not** edit `css/application.css` directly, as it will be overwritten by `build.py`.
 
-1. **Overriding GOV.UK Variables**: To override default GOV.UK Frontend Sass variables (e.g. `$govuk-brand-colour`), pass them into the `with (...)` configuration block in `src/scss/application.scss`:
+1. **GOV.UK Frontend is imported with `@use`** in `src/scss/application.scss`:
    ```scss
    @use "node_modules/govuk-frontend/dist/govuk/index" as * with (
-     $govuk-assets-path: "/assets/"
-     // Add overrides here
+     $govuk-assets-path: "../assets/"
    );
    ```
-2. **Adding Custom CSS Classes**: Add any custom utility classes, component overrides, or new styling to the partials in `src/scss/components/` (e.g. `_index.scss` or `_shared-components.scss`). 
-3. **Recompiling**: Run `python3 _build/build.py` from the `gds-local` directory. This script uses `libsass` to compile the SCSS into `css/application.css` before assembling the HTML pages.
+2. **Custom component styles** live in `src/scss/components/` — imported via `@import` after the `@use` directive. Current components: `_layout.scss`, `_shared-components.scss`, `_lgam-accordion.scss`, `_lgam-tags.scss`, `_index.scss`, `_taxonomy-workbench.scss`, `_feedback-modal.scss`.
+3. **Recompiling**: Run `python3 _build/build.py` from the `gds-local` directory. The script calls `npx sass --load-path=. src/scss/application.scss css/application.css`.
 
 ## GOV.UK Frontend v6 Header Layout Note
 
 In GOV.UK Frontend v6, the standard `govuk-header` component was split, removing the inline service name and moving it to a new `govuk-service-navigation` band. To preserve vertical space, we have manually recreated the v5 inline layout classes (`.govuk-header__content`, `.govuk-header__service-name`) in `src/scss/components/_index.scss`. 
 **Do not** replace the header layout with `govuk-service-navigation` unless explicitly requested. Keep the service name inline inside the `govuk-header`.
 
-## Graph Data Model
+## Data Models
 
-Nodes have: `id`, `label`, `type`, `description`
-Edges have: `source`, `target`, `relationship` (one of `ROUTES_TO`, `USES`, `SUPPORTS`)
+**There is no single canonical JSON model yet.** Multiple historical JSON files exist in `resources/` representing different iterations and purposes (graph view, system registry, ESD mapping). See `resources/README.md` for a detailed inventory of each file, its format, and what (if anything) loads it.
 
-Node types: `PublicChannel`, `CouncilAgent`, `Capability`, `ITSystem`, `FunctionGroup`, `Function`
+The agreed structural hierarchy for LGAM is:
 
-The same data model is used in both the JSON resource files and the inline data in `gds-local-alt.html`. When updating the model, keep both in sync.
+```
+Layer → [Sublayer] → Domain → Component
+         optional
+```
+
+- **Layer** — one of the 9 top-level technology concerns
+- **Sublayer** — optional intermediate grouping (only Foundational Technology currently uses these: AI, DevOps, End User, Service Management, Infrastructure)
+- **Domain** — named technology grouping at the working level (e.g. "Adult Social Care", "Generative AI", "API Management"). This is the universal term regardless of which layer a domain sits in.
+- **Component** — individual technology element (e.g. a specific platform or system)
+
+`gds-local-alt.html` inlines its graph data (originally from `lgam-data-lgaFunctions.json`) rather than fetching it at runtime. The inline data and the JSON files are **not currently in sync**.
+
+## Feedback Mechanism
+
+User feedback is collected via a **service navigation link** ("Give feedback") rather than a phase banner. This link:
+- **Without JS (base):** navigates to a `mailto:` with pre-filled subject line
+- **With JS (enhanced):** opens a modal dialog (following the MoJ Design System dialog pattern) with structured prompts, then constructs a richer mailto on submit
+
+Per-page "suggest a change" links appear at the bottom of each built subpage. A full structured survey (MS Forms, to be replaced with GOV.UK Forms when governance allows) is linked from the site footer.
 
 ## Design Conventions
 
 - Follow **GOV.UK Design System** patterns: https://design-system.service.gov.uk/
-- Use the GOV.UK colour palette — each layer has a distinct colour (blue, purple, teal, orange, red)
-- All pages carry a **Beta phase banner**
+- Use the GOV.UK colour palette — each layer has a distinct colour (see Taxonomy Colours below)
+- All pages carry a **service nav** with Documentation, Contact, and Give feedback links
 - New subpages: create a file in the appropriate taxonomy-aligned folder (e.g., `_build/_pages/business-area/`) or a specific `topics/` folder (e.g. for cross-cutting concepts like the data sharing hub). Set `status: draft`, run `build.py`, iterate, then flip to `status: published` when ready
 - Ensure accessibility: skip links, semantic HTML, sufficient contrast, ARIA attributes where needed
 

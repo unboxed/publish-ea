@@ -19,7 +19,7 @@ It reads each page source, wraps the content in the shared partials, and writes 
 2. **Edit** source files in `_build/_pages/` or `_build/_hand/`
 3. **Run** `python3 gds-local/_build/build.py` locally to generate output
 4. **Commit** both source files and generated output to your branch
-5. **Push** to your fork and open a PR against `govuk-digital-backbone/publish-ea` main
+5. **Push** to your fork and open a PR against `gds-dtx/publish-ea` main
 6. **Review** — reviewers can check the generated `preview/` pages in the PR diff, or merge to their own fork to see them rendered
 7. **Merge** — once approved, the PR merges to upstream main. GitHub Pages serves the committed HTML via Jekyll (pass-through, no transformation happens since our files aren't Jekyll templates)
 

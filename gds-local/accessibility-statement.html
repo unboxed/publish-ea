@@ -6,22 +6,8 @@
   <title>Accessibility statement - Local Government Architecture Model - GOV.UK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#1d70b8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@5.13.0/dist/govuk/govuk-frontend.min.css">
-
-  <style>
-    /* Fixes 404 errors for fonts/images by pointing the CSS to the unpkg CDN */
-    :root {
-      --govuk-assets-path: "https://unpkg.com/govuk-frontend@5.13.0/dist/govuk/assets/";
-    }
-
-
-
-    .app-content {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 30px 15px;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/application.css">
+  <link rel="icon" sizes="48x48" href="https://gov.uk/assets/frontend/favicon-24f9fbe064118d58937932e73edafd1d50cb60f7bd84f52308382a309bc2d655.ico">
 </head>
 
 <body class="govuk-template__body">
@@ -31,8 +17,8 @@
   <header class="govuk-header" data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
-        <a href="/" class="govuk-header__link govuk-header__link--homepage">
-          <svg focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324 60" height="30" width="162" fill="currentcolor" class="govuk-header__logotype" aria-label="GOV.UK">
+        <a href="/gds-local/" class="govuk-header__homepage-link">
+          <svg focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324 60" height="30" width="162" fill="currentColor" class="govuk-header__logotype" aria-label="GOV.UK">
             <title>GOV.UK</title>
             <g>
               <circle cx="20" cy="17.6" r="3.7" />
@@ -58,66 +44,103 @@
     </div>
   </header>
 
-  <main class="app-content" id="main-content" role="main">
+  <nav class="app-service-nav" aria-label="Service">
+    <div class="govuk-width-container">
+      <ul class="app-service-nav__list">
+        <li><a class="app-service-nav__link" href="index.html">Documentation</a></li>
+        <li><a class="app-service-nav__link" href="mailto:gdslocal-info@dsit.gov.uk">Contact GDS Local</a></li>
+        <li><a class="app-service-nav__link" href="mailto:gdslocal-info@dsit.gov.uk?subject=LGAM%20Feedback" data-feedback-trigger="usage">Give feedback</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h1 class="govuk-heading-l">Accessibility statement for the Local Government Architecture Model</h1>
+  <div class="app-content-wrapper">
+    <nav class="app-sidebar" aria-label="Page navigation">
+      <h2 class="app-navigation__heading">Contents</h2>
+      <ul class="app-navigation">
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#using-this-website">Using this website</a></li>
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#how-accessible">How accessible this website is</a></li>
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#feedback-contact">Feedback and contact information</a></li>
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#enforcement">Enforcement procedure</a></li>
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#technical-information">Technical information</a></li>
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#further-testing">Content needing further testing</a></li>
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#how-we-tested">How we tested</a></li>
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#improving">What we are doing to improve</a></li>
+        <li class="app-navigation__item"><a class="app-navigation__link" href="#preparation">Preparation of this statement</a></li>
+      </ul>
+    </nav>
 
-    <!-- Section 1: Using this website -->
-    <h2 class="govuk-heading-m">Using this website</h2>
-    <p class="govuk-body">This website is run by the Government Digital Service (GDS). We want as many people as possible to be able to use this website. For example, that means you should be able to:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>change colours, contrast levels and fonts using browser or device settings</li>
-      <li>zoom in up to 400% without the text spilling off the screen</li>
-      <li>navigate most of the website using a keyboard or speech recognition software</li>
-      <li>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</li>
-    </ul>
-    <p class="govuk-body">We have also made the website text as simple as possible to understand.</p>
-    <p class="govuk-body"><a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> has advice on making your device easier to use if you have a disability.</p>
+    <main class="app-main-content" id="main-content" role="main">
 
-    <!-- Section 2: How accessible this website is -->
-    <h2 class="govuk-heading-m">How accessible this website is</h2>
-    <p class="govuk-body">We are not currently aware of any significant accessibility issues with this website. If you find any problems, please contact us.</p>
+      <h1 class="govuk-heading-l">Accessibility statement for the Local Government Architecture Model</h1>
 
-    <!-- Section 3: Feedback and contact information -->
-    <h2 class="govuk-heading-m">Feedback and contact information</h2>
-    <p class="govuk-body">If you find any problems not listed on this page or think we are not meeting accessibility requirements, contact us at <a href="mailto:gdslocal-info@dsit.gov.uk" class="govuk-link">gdslocal-info@dsit.gov.uk</a>.</p>
-    <p class="govuk-body">If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille, email <a href="mailto:gdslocal-info@dsit.gov.uk" class="govuk-link">gdslocal-info@dsit.gov.uk</a>.</p>
+      <section id="using-this-website">
+        <h2 class="govuk-heading-m">Using this website</h2>
+        <p class="govuk-body">This website is run by the Government Digital Service (GDS). We want as many people as possible to be able to use this website. For example, that means you should be able to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>change colours, contrast levels and fonts using browser or device settings</li>
+          <li>zoom in up to 400% without the text spilling off the screen</li>
+          <li>navigate most of the website using a keyboard or speech recognition software</li>
+          <li>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</li>
+        </ul>
+        <p class="govuk-body">We have also made the website text as simple as possible to understand.</p>
+        <p class="govuk-body"><a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> has advice on making your device easier to use if you have a disability.</p>
+      </section>
 
-    <!-- Section 4: Enforcement procedure -->
-    <h2 class="govuk-heading-m">Enforcement procedure</h2>
-    <p class="govuk-body">The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the 'accessibility regulations'). If you are not happy with how we respond to your complaint, contact the <a href="https://www.equalityadvisoryservice.com/" class="govuk-link">Equality Advisory and Support Service (EASS)</a>.</p>
+      <section id="how-accessible">
+        <h2 class="govuk-heading-m">How accessible this website is</h2>
+        <p class="govuk-body">This website uses <a href="https://design-system.service.gov.uk/" class="govuk-link">GOV.UK Design System</a> and <a href="https://design-patterns.service.justice.gov.uk/" class="govuk-link"><abbr title="Ministry of Justice">MoJ</abbr> Design System</a> components, which are designed to meet WCAG 2.2 AA. We are not currently aware of any significant accessibility issues with the core content pages.</p>
+        <p class="govuk-body">The feedback dialog, which helps users send structured feedback via email, is a newer feature that has not yet been fully tested with all assistive technologies. See <a href="#further-testing" class="govuk-link">content needing further testing</a> below.</p>
+      </section>
 
-    <!-- Section 5: Technical information about this website's accessibility -->
-    <h2 class="govuk-heading-m">Technical information about this website's accessibility</h2>
-    <p class="govuk-body">GDS is committed to making this website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.</p>
-    <p class="govuk-body"><strong>Compliance status</strong></p>
-    <p class="govuk-body">This website is fully compliant with the Web Content Accessibility Guidelines version 2.2 AA standard, based on our most recent testing.</p>
+      <section id="feedback-contact">
+        <h2 class="govuk-heading-m">Feedback and contact information</h2>
+        <p class="govuk-body">If you find any problems not listed on this page or think we are not meeting accessibility requirements, contact us at <a href="mailto:gdslocal-info@dsit.gov.uk" class="govuk-link">gdslocal-info@dsit.gov.uk</a>.</p>
+        <p class="govuk-body">If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille, email <a href="mailto:gdslocal-info@dsit.gov.uk" class="govuk-link">gdslocal-info@dsit.gov.uk</a>.</p>
+      </section>
 
-    <!-- Section 6: Non-accessible content -->
-    <h2 class="govuk-heading-m">Non-accessible content</h2>
-    <p class="govuk-body">At the time of our most recent test, no non-accessible content was identified. If you encounter any issues, please contact us.</p>
+      <section id="enforcement">
+        <h2 class="govuk-heading-m">Enforcement procedure</h2>
+        <p class="govuk-body">The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the 'accessibility regulations'). If you are not happy with how we respond to your complaint, contact the <a href="https://www.equalityadvisoryservice.com/" class="govuk-link">Equality Advisory and Support Service (EASS)</a>.</p>
+      </section>
 
-    <!-- Section 7: How we tested this website -->
-    <h2 class="govuk-heading-m">How we tested this website</h2>
-    <p class="govuk-body">This website was last tested on 20 July 2026.</p>
-    <p class="govuk-body">Testing was carried out by the GDS Local team using:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Google Lighthouse — accessibility score: 100/100</li>
-      <li>manual keyboard navigation testing</li>
-      <li>automated contrast analysis (WCAG AA 4.5:1 verified for all text colours)</li>
-      <li>screen reader testing with VoiceOver</li>
-    </ul>
-    <p class="govuk-body">We tested the main index page and representative subpages.</p>
+      <section id="technical-information">
+        <h2 class="govuk-heading-m">Technical information about this website's accessibility</h2>
+        <p class="govuk-body">GDS is committed to making this website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.</p>
+        <h3 class="govuk-heading-s">Compliance status</h3>
+        <p class="govuk-body">This website is partially compliant with the <a href="https://www.w3.org/TR/WCAG22/" class="govuk-link">Web Content Accessibility Guidelines version 2.2</a> AA standard, due to the items listed under <a href="#further-testing" class="govuk-link">content needing further testing</a>.</p>
+      </section>
 
-    <!-- Section 8: What we are doing to improve accessibility -->
-    <h2 class="govuk-heading-m">What we are doing to improve accessibility</h2>
-    <p class="govuk-body">The site is fully compliant and monitored regularly. We will review this accessibility statement annually or when significant changes are made to the website.</p>
+      <section id="further-testing">
+        <h2 class="govuk-heading-m">Content needing further testing</h2>
+        <p class="govuk-body">The feedback dialog was added in September 2026. It uses a native HTML <code>&lt;dialog&gt;</code> element with GOV.UK form components for labels, inputs, and buttons. Automated testing (Google Lighthouse) scores it at 100/100 for accessibility, and it supports keyboard navigation, focus trapping, and an <code>aria-live</code> character counter. However, it has not yet been manually tested with JAWS or NVDA screen readers.</p>
+        <p class="govuk-body">If you encounter any issues using the feedback dialog, please <a href="mailto:gdslocal-info@dsit.gov.uk" class="govuk-link">contact us</a> and we will assist you directly.</p>
+      </section>
 
-    <!-- Section 9: Preparation of this accessibility statement -->
-    <h2 class="govuk-heading-m">Preparation of this accessibility statement</h2>
-    <p class="govuk-body">This statement was prepared on 13 May 2026. It was last reviewed on 20 July 2026.</p>
+      <section id="how-we-tested">
+        <h2 class="govuk-heading-m">How we tested this website</h2>
+        <p class="govuk-body">This website was last tested on 20 July 2026 (core content pages) and 21 September 2026 (feedback dialog).</p>
+        <p class="govuk-body">Testing was carried out by the GDS Local team using:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Google Lighthouse accessibility audit (score: 100/100)</li>
+          <li>manual keyboard navigation testing</li>
+          <li>automated contrast analysis (WCAG AA 4.5:1 verified for all text colours)</li>
+          <li>screen reader testing with VoiceOver</li>
+        </ul>
+      </section>
 
-  </main>
+      <section id="improving">
+        <h2 class="govuk-heading-m">What we are doing to improve accessibility</h2>
+        <p class="govuk-body">We monitor the site regularly and will carry out full screen reader testing of the feedback dialog. We will review this accessibility statement annually or when significant changes are made to the website.</p>
+      </section>
+
+      <section id="preparation">
+        <h2 class="govuk-heading-m">Preparation of this accessibility statement</h2>
+        <p class="govuk-body">This statement was prepared on 13 May 2026. It was last reviewed on 21 September 2026.</p>
+      </section>
+
+    </main>
+  </div>
 
   <footer class="govuk-footer">
     <div class="govuk-width-container">
@@ -128,15 +151,41 @@
             <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="mailto:gdslocal-info@dsit.gov.uk">Contact</a></li>
             <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="accessibility-statement.html">Accessibility statement</a></li>
           </ul>
-          <a class="govuk-footer__link govuk-footer__copyright-logo" href="#"> &copy; Crown copyright </a>
+          <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+            <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145" />
+          </svg>
+          <span class="govuk-footer__licence-description"> All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated </span>
+        </div>
+        <div class="govuk-footer__meta-item">
+          <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"> &copy; Crown copyright </a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script type="module">
-    import { initAll } from 'https://cdn.jsdelivr.net/npm/govuk-frontend@5.13.0/dist/govuk/govuk-frontend.min.js';
-    initAll();
+  <script src="./js/govuk-frontend.min.js"></script>
+  <script>
+    window.GOVUKFrontend.initAll();
   </script>
+
+  <dialog id="lgam-feedback-dialog" class="lgam-feedback-dialog" aria-labelledby="feedback-modal-title" aria-modal="true">
+    <div class="lgam-feedback-dialog__header">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0" id="feedback-modal-title"></h2>
+      <button type="button" class="lgam-feedback-dialog__close" id="feedback-modal-close" aria-label="Close">&#215;</button>
+    </div>
+    <div class="lgam-feedback-dialog__body" id="feedback-modal-body"></div>
+    <div class="lgam-feedback-dialog__footer">
+      <div class="feedback-footer-info">
+        <p class="govuk-body-s govuk-!-margin-bottom-0" id="feedback-aggregate-count" aria-live="polite" aria-atomic="true"></p>
+        <p class="govuk-body-s govuk-!-margin-bottom-0" style="color:#505a5f;">This will open a pre-filled email in your email client.</p>
+      </div>
+      <div class="feedback-footer-actions">
+        <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" id="feedback-modal-cancel">Cancel</button>
+        <button type="button" class="govuk-button govuk-!-margin-bottom-0" id="feedback-modal-submit">Open in email</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./js/feedback-modal.js"></script>
 </body>
 </html>
