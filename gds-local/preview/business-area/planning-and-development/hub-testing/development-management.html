@@ -12,6 +12,44 @@
     />
     <meta name="theme-color" content="#1d70b8" />
     <link rel="stylesheet" href="../../../../css/application.css" />
+    <style>
+      .arch-box {
+        border-top: 4px solid #000080;
+        background: #f3f2f1;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      .arch-box--warning {
+        border-top-color: #d4351c;
+      }
+      .arch-box--question {
+        border-top-color: #f47738;
+      }
+      .arch-box--pattern {
+        border-top-color: #00703c;
+      }
+      .integration-row {
+        border-left: 4px solid #000080;
+        padding: 15px 20px;
+        margin-bottom: 0;
+        background: #f3f2f1;
+      }
+      .integration-row + .integration-row {
+        border-top: 1px solid #b1b4b6;
+      }
+      .confidence-tag {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 2px 6px;
+        background: #f47738;
+        color: #fff;
+        vertical-align: middle;
+      }
+      .confidence-tag--provisional {
+        background: #1d70b8;
+      }
+    </style>
   </head>
 
   <body class="govuk-template__body">
