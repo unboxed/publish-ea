@@ -3351,78 +3351,171 @@
 
         <hr class="govuk-section-break govuk-section-break--xl" />
 
-        <section id="platforms">
-          <h2 class="govuk-heading-l">Platforms & tools</h2>
+        <section id="what-makes-planning-different">
+          <h2 class="govuk-heading-l">
+            What makes planning technically different
+          </h2>
+
           <p class="govuk-body">
-            The market for Development Management systems encompasses both
-            comprehensive enterprise suites and an emerging ecosystem of
-            interoperable, API-first tools.
+            Every council domain has integration points with shared
+            capabilities. Planning is architecturally distinctive in several
+            ways that affect how you design those integrations:
+            <span class="confidence-tag">To validate</span>
           </p>
 
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-half">
-              <div
-                class="feature-box"
-                style="height: 100%; border-top-color: #1d70b8"
-              >
-                <h3 class="govuk-heading-m">Established Enterprise Suites</h3>
-                <p class="govuk-body govuk-!-font-size-14">
-                  These platforms provide comprehensive, end-to-end
-                  functionality, typically bundling the public register,
-                  workflow, document management, and spatial tools into a
-                  unified environment.
-                </p>
-                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-14">
-                  <li>
-                    <strong>Idox Uniform</strong> — A comprehensive back-office
-                    suite, often paired with 'Public Access' for the citizen
-                    portal.
-                  </li>
-                  <li>
-                    <strong>NEC Assure</strong> — A cloud-based regulatory
-                    services platform covering planning, building control, and
-                    land charges.
-                  </li>
-                  <li>
-                    <strong>DEF Software</strong> — Modular, Microsoft-aligned
-                    planning and regulatory software.
-                  </li>
-                  <li>
-                    <strong>Arcus Global</strong> — Salesforce-based regulatory
-                    services platform.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="govuk-grid-column-one-half">
-              <div
-                class="feature-box"
-                style="height: 100%; border-top-color: #00703c"
-              >
-                <h3 class="govuk-heading-m">Composable Ecosystem</h3>
-                <p class="govuk-body govuk-!-font-size-14">
-                  Tools often emerging from initiatives like the Open Digital
-                  Planning (ODP) project. These are decoupled components
-                  designed to connect via open APIs.
-                </p>
-                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-14">
-                  <li>
-                    <strong>PlanX</strong> — A rules-as-code frontend engine for
-                    intelligent application submission and self-service
-                    validation.
-                  </li>
-                  <li>
-                    <strong>Back Office Planning System (BOPS)</strong> — A
-                    targeted workflow engine specifically designed for officer
-                    assessment and determination.
-                  </li>
-                  <li>
-                    <strong>i.AI Extract</strong> — Government-built AI tool for
-                    extracting structured data from unstructured PDFs.
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Volume and shape of unstructured data
+            </h3>
+            <p class="govuk-body">
+              A single planning application can generate hundreds of documents —
+              architectural drawings, structural calculations, environmental
+              reports, public representations, consultee responses. These are
+              overwhelmingly unstructured (PDFs, TIFFs, large-format plans). The
+              ratio of unstructured to structured data is far higher than in
+              most council domains. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Document management integration cannot be purely
+                metadata-and-reference — the volume and file sizes create real
+                storage, retrieval and indexing challenges.
+              </li>
+              <li>
+                A corporate DMS built for committee papers may not handle the
+                scale or the access patterns (frequent retrieval during
+                assessment, public register obligations).
+              </li>
+              <li>
+                Search and classification of planning documents requires domain
+                awareness that generic enterprise search may not provide.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Spatial data is not a lookup — it is structurally integral
+            </h3>
+            <p class="govuk-body">
+              In most council services, geospatial information is a reference —
+              you look up an address, retrieve a UPRN, and move on. In planning,
+              spatial data is structurally embedded in the case logic:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                The application boundary (red-line) is a legal artefact that
+                defines the scope of the permission.
+              </li>
+              <li>
+                Determination requires intersection of that boundary with
+                constraint layers (conservation areas, flood zones, TPOs,
+                Article 4 directions).
+              </li>
+              <li>
+                Changes to the boundary during assessment can change which
+                policies apply and which consultees must be notified.
+              </li>
+              <li>
+                Integration with GIS is not read-only — the planning system may
+                need to write or amend spatial objects.
+              </li>
+            </ul>
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              This makes the geospatial integration tighter and more
+              bidirectional than most domains require. A simple "query the
+              corporate GIS for constraints" pattern may not be sufficient if
+              the planning system also needs to store, display and allow
+              amendment of application-specific geometries.
+            </p>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Statutory timescales create hard coupling to notifications
+            </h3>
+            <p class="govuk-body">
+              Planning has legally defined determination periods (typically 8 or
+              13 weeks). Missing these deadlines has direct consequences — the
+              applicant gains a right of appeal. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Notifications (acknowledgements, consultation triggers, decision
+                notices) are not fire-and-forget. The planning system needs to
+                know they were sent and when.
+              </li>
+              <li>
+                If notification delivery fails silently, the statutory clock may
+                expire without proper consultation having occurred — creating
+                legal risk.
+              </li>
+              <li>
+                Integration with notification services needs confirmation of
+                delivery and timestamps, not just acceptance of a message into a
+                queue.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">Public register obligations</h3>
+            <p class="govuk-body">
+              Planning authorities must maintain a public register of
+              applications and decisions. This is not the same as "publishing
+              data" — it is a statutory requirement with specific content and
+              accessibility expectations. This affects:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Document management — documents placed on the register must be
+                redacted for personal information but remain publicly
+                accessible.
+              </li>
+              <li>
+                Records management — the register is a permanent, legally
+                authoritative record, not a retention-managed archive.
+              </li>
+              <li>
+                Data ownership — the planning system, the register, and the DMS
+                may all hold overlapping copies of "the same" document, with
+                different redaction states.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Market concentration and closed ecosystems
+            </h3>
+            <p class="govuk-body">
+              The planning back-office market is dominated by a small number of
+              suppliers whose products tend to provide integrated (bundled)
+              document storage, GIS display, notification, and fee management
+              within the planning application. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                The existing integration boundary for most councils is
+                "everything inside the planning product" — whether or not that's
+                architecturally desirable.
+              </li>
+              <li>
+                Extracting a capability (e.g. moving document storage to a
+                corporate DMS) may require the supplier to expose APIs they have
+                no commercial incentive to provide.
+              </li>
+              <li>
+                Replacing the planning system means migrating not just case data
+                but all the bundled capability data (documents, spatial objects,
+                payment records, audit trails).
+              </li>
+              <li>
+                The cost of migration from one supplier to another is widely
+                reported to exceed £1M per authority, largely because of the
+                data extraction complexity.
+              </li>
+            </ul>
           </div>
         </section>
 
