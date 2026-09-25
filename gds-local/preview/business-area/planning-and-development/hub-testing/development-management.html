@@ -1713,18 +1713,21 @@
                         Validation is traditionally a major bottleneck caused by
                         unstructured data. To reduce manual data entry from
                         legacy formats, councils are introducing computer vision
-                        and LLMs (such as the government's
-                        <a
-                          class="govuk-link"
-                          href="https://mhclgdigital.blog.gov.uk/2026/04/15/extract-unlocking-englands-planning-data/"
-                          >MHCLG / i.AI Extract</a
-                        >
-                        tool) as a processing middleware.
+                        and LLMs.
                       </p>
+
                       <p class="govuk-body">
                         These models parse inbound PDFs, isolate the redline
                         boundary pixels, convert them into structured GeoJSON,
                         and extract form intent into standard schema variables.
+                      </p>
+                      <p class="govuk-body">
+                        When working with structured data submissions, both
+                        deterministic approaches and LLMs can support validation
+                        can reduce the manual processing and increase processing
+                        times. Moving these as close to the applicant as
+                        possible (for example, integrating in submission tools)
+                        can resolve issues before receipt to the LPA.
                       </p>
 
                       <hr
@@ -1813,7 +1816,7 @@
                           fill="#1d70b8"
                           text-anchor="middle"
                         >
-                          AI ENABLEMENT (i.AI EXTRACT)
+                          AI ENABLEMENT
                         </text>
 
                         <rect
