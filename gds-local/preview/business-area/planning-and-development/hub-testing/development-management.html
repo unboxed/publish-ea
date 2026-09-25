@@ -2886,7 +2886,7 @@
                   <!-- Phase 5: Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase5 -target"
+                    id="phase5-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -3160,9 +3160,68 @@
           </div>
         </section>
 
-        <hr
-          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
-        />
+        <hr class="govuk-section-break govuk-section-break--l" />
+
+        <section id="target-data">
+          <h2 class="govuk-heading-l">Target data models</h2>
+          <p class="govuk-body">
+            When procuring or configuring systems for Development Management,
+            the architecture must align with the national data schemas
+            maintained by MHCLG on
+            <a href="https://planning.data.gov.uk/" class="govuk-link"
+              >planning.data.gov.uk</a
+            >. Treating these schemas as your target data model ensures
+            automated interoperability with central government and neighboring
+            authorities.
+          </p>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Dataset Schema</th>
+                <th scope="col" class="govuk-table__header">
+                  Architectural Purpose
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong>Planning applications</strong>
+                </td>
+                <td class="govuk-table__cell">
+                  The core transactional record. Target architectures must
+                  natively emit changes to application status (e.g.,
+                  'Registered', 'Determined') using this exact schema via an
+                  Event Broker.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong>Conservation areas / Tree preservation orders</strong>
+                </td>
+                <td class="govuk-table__cell">
+                  Spatial constraints. Instead of copying these as static
+                  shapefiles, the rules-engine frontend should query these
+                  schemas via API to dynamically determine validation
+                  requirements.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong>Developer contributions (Section 106)</strong>
+                </td>
+                <td class="govuk-table__cell">
+                  Financial obligations linked to planning permissions. Requires
+                  integration between the Workflow DB and the council's
+                  Financial capabilities using this structured data model.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <hr class="govuk-section-break govuk-section-break--xl" />
 
         <section id="architecture-diagram">
           <h2 class="govuk-heading-m">Target state data flow</h2>
@@ -3847,67 +3906,6 @@
               ></path>
             </svg>
           </div>
-        </section>
-
-        <hr class="govuk-section-break govuk-section-break--xl" />
-
-        <section id="target-data">
-          <h2 class="govuk-heading-l">Target data models</h2>
-          <p class="govuk-body">
-            When procuring or configuring systems for Development Management,
-            the architecture must align with the national data schemas
-            maintained by MHCLG on
-            <a href="https://planning.data.gov.uk/" class="govuk-link"
-              >planning.data.gov.uk</a
-            >. Treating these schemas as your target data model ensures
-            automated interoperability with central government and neighboring
-            authorities.
-          </p>
-
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Dataset Schema</th>
-                <th scope="col" class="govuk-table__header">
-                  Architectural Purpose
-                </th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong>Planning applications</strong>
-                </td>
-                <td class="govuk-table__cell">
-                  The core transactional record. Target architectures must
-                  natively emit changes to application status (e.g.,
-                  'Registered', 'Determined') using this exact schema via an
-                  Event Broker.
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong>Conservation areas / Tree preservation orders</strong>
-                </td>
-                <td class="govuk-table__cell">
-                  Spatial constraints. Instead of copying these as static
-                  shapefiles, the rules-engine frontend should query these
-                  schemas via API to dynamically determine validation
-                  requirements.
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong>Developer contributions (Section 106)</strong>
-                </td>
-                <td class="govuk-table__cell">
-                  Financial obligations linked to planning permissions. Requires
-                  integration between the Workflow DB and the council's
-                  Financial capabilities using this structured data model.
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </section>
 
         <hr class="govuk-section-break govuk-section-break--xl" />
