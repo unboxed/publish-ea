@@ -492,12 +492,12 @@
                       <a class="govuk-tabs__tab" href="#phase1-anti"
                         >Legacy Anti-patterns</a
                       >
-                    </li>
+                    </li-->
                     <li class="govuk-tabs__list-item">
                       <a class="govuk-tabs__tab" href="#phase1-target"
                         >Target Architecture</a
                       >
-                    </li-->
+                    </li>
                   </ul>
 
                   <!-- Phase 1: Process -->
@@ -702,20 +702,14 @@
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
-                        Best Practice: Composable rules-as-code frontend
+                        Best Practice: Self-service planning advice
                       </h4>
                       <p class="govuk-body">
                         Modern architectures utilise rules-as-code engines
-                        (e.g., PlanX) instead of static forms. These systems
-                        branch intelligently, interacting with APIs mid-journey
-                        to calculate complex fees and fetch spatial constraints
-                        (like Conservation Areas) before the user even submits.
-                      </p>
-                      <p class="govuk-body">
-                        The resulting payload is standardised JSON aligned to
-                        the MHCLG schema, meaning the back-office workflow
-                        engine receives pre-structured, validated data rather
-                        than a generic PDF.
+                        (e.g., PlanX) instead of static web content. These
+                        systems branch intelligently, helping applicants work
+                        out whether or not they need to submit and what they
+                        will need to provide.
                       </p>
 
                       <hr
@@ -727,13 +721,12 @@
                           <strong
                             class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             style="max-width: unset"
-                            >Reduced failure demand</strong
+                            >Channel shift</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
-                            Catching errors and calculating exact fees
-                            dynamically prevents invalid applications from ever
-                            entering the system, eliminating hours of
-                            back-and-forth emails for officers.
+                            Better self-service tools enable fewer calls and
+                            emails which need manually responding to, saving
+                            time and money.
                           </p>
                         </li>
                         <li class="govuk-!-margin-bottom-0">
@@ -743,9 +736,8 @@
                             >Better citizen UX</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
-                            Applicants get immediate clarity on constraints
-                            (e.g., "You are in a flood zone") before paying
-                            fees.
+                            Applicants can access immediate responses to their
+                            queries at any time of day or night.
                           </p>
                         </li>
                       </ul>
@@ -766,7 +758,7 @@
                         "
                       >
                         <!-- Agent -->
-                        <rect
+                        <!--rect
                           x="10"
                           y="95"
                           width="100"
@@ -804,7 +796,7 @@
                           stroke="#0b0c0c"
                           stroke-width="2"
                           marker-end="url(#arrow)"
-                        />
+                        /-->
 
                         <!-- Rules Engine -->
                         <rect
@@ -887,7 +879,7 @@
                           stroke-width="2"
                           marker-end="url(#arrow)"
                         />
-                        <text
+                        <!--text
                           x="400"
                           y="110"
                           font-size="11"
@@ -895,7 +887,7 @@
                           fill="#505a5f"
                         >
                           Structured JSON
-                        </text>
+                        </text-->
 
                         <rect
                           x="470"
@@ -915,11 +907,11 @@
                           text-anchor="middle"
                           fill="#0b0c0c"
                         >
-                          Workflow Engine
+                          Submission service
                         </text>
 
                         <!-- Branches Down: Payments -->
-                        <path
+                        <!--path
                           d="M 260 145 L 260 200 L 460 200"
                           fill="none"
                           stroke="#1d70b8"
@@ -956,7 +948,7 @@
                           fill="#0b0c0c"
                         >
                           Payment Gateway
-                        </text>
+                        </text-->
                       </svg>
                     </div>
                   </div>
