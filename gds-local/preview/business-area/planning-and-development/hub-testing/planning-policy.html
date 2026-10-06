@@ -137,29 +137,45 @@
         <h2 class="govuk-heading-l">The LGAM technology stack</h2>
         <p class="govuk-body">Delivering a Local Plan requires orchestrating analytical and engagement capabilities.</p>
         
-        <table class="govuk-table">
+               <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third">LGAM Taxonomy Node</th>
-              <th scope="col" class="govuk-table__header">Domain Specific Implementation</th>
+              <th scope="col" class="govuk-table__header">LGAM Layer</th>
+              <th scope="col" class="govuk-table__header">LGAM Element</th>
+              <th scope="col" class="govuk-table__header">Context in Planning</th>
+              <th scope="col" class="govuk-table__header">Enabling Technology (Example)</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Geospatial data</th>
-              <td class="govuk-table__cell">Spatial modelling to conduct Multi-Criteria Decision Analysis (MCDA), overlaying flood zones, transport nodes, and conservation areas to identify viable development sites.</td>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--corporate">Corporate Areas</span></td>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--corporate">Geographical</span></td>
+              <td class="govuk-table__cell">Spatial modelling to conduct <abbr title="Multi-Criteria Decision Analysis">MCDA</abbr>, overlaying flood zones, transport nodes, and conservation areas to identify viable development sites.</td>
+              <td class="govuk-table__cell">Advanced <abbr title="Geographic Information System">GIS</abbr> / Spatial Modelling Tool</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Data warehousing</th>
-              <td class="govuk-table__cell">Aggregating ONS demographic data, historic housing delivery rates, and economic models into a central repository to form the "evidence base".</td>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--data">Data and Information</span></td>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--data">Data warehousing</span></td>
+              <td class="govuk-table__cell">Aggregating <abbr title="Office for National Statistics">ONS</abbr> demographic data, historic housing delivery rates, and economic models into a central repository to form the "evidence base".</td>
+              <td class="govuk-table__cell">Enterprise Data Lake / Warehouse</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Websites (Engagement)</th>
-              <td class="govuk-table__cell">Interactive, map-based consultation platforms allowing citizens to drop pins and leave sentiment-driven feedback on proposed zoning changes (Regulation 18/19).</td>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--interface">Council Interfaces</span></td>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--interface">Website</span></td>
+              <td class="govuk-table__cell">Interactive, map-based consultation platforms allowing citizens to drop pins and leave sentiment-driven feedback on proposed zoning changes.</td>
+              <td class="govuk-table__cell">Citizen Engagement Portal</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">API management</th>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--integration">Integration</span></td>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--integration">API Gateway</span></td>
               <td class="govuk-table__cell">Once the Plan is adopted, exposing the spatial policies as "Rules-as-code" APIs to be consumed directly by the Development Management forms engines.</td>
+              <td class="govuk-table__cell">Open Data <abbr title="Application Programming Interface">API</abbr> Server</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--data">Data and Information</span></td>
+              <td class="govuk-table__cell"><span class="govuk-tag lgam-tag--data">Document and records management</span></td>
+              <td class="govuk-table__cell">Version control and archiving of the statutory Local Plan documents throughout multiple rounds of public examination.</td>
+              <td class="govuk-table__cell">Corporate <abbr title="Electronic Document Management">EDM</abbr></td>
             </tr>
           </tbody>
         </table>
