@@ -29,6 +29,14 @@
         font-size: 14px;
       }
 
+      /* Architecture callout box */
+      .arch-box {
+        border-top: 4px solid #000080;
+        background: #f3f2f1;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
       /* SVG Diagram Container */
       .arch-diagram-container {
         background: #fff;
@@ -156,8 +164,10 @@
             >
           </li>
           <li class="app-navigation__item">
-            <a class="app-navigation__link" href="#platforms"
-              >Platforms & tools</a
+            <a
+              class="app-navigation__link"
+              href="#what-makes-building-control-different"
+              >What makes building control different</a
             >
           </li>
         </ul>
@@ -503,7 +513,40 @@
         />
 
         <section id="the-journey">
-          <h2 class="govuk-heading-l">Business process and user journey</h2>
+          <!-- Shared arrowhead markers for the diagrams below -->
+          <svg
+            width="0"
+            height="0"
+            aria-hidden="true"
+            focusable="false"
+            style="position: absolute"
+          >
+            <defs>
+              <marker
+                id="arrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0b0c0c"></path>
+              </marker>
+              <marker
+                id="arrow-blue"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#1d70b8"></path>
+              </marker>
+            </defs>
+          </svg>
+          <h2 class="govuk-heading-l">Business process</h2>
           <p class="govuk-body">
             This section outlines the business process at each phase of a
             building control application. Expand each phase to compare the
@@ -520,8 +563,7 @@
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">1</span> Submission &
-                    Ingestion</span
+                    ><span class="phase-number">1</span> Submission</span
                   >
                 </h3>
               </div>
@@ -537,7 +579,7 @@
                     </li>
                     <li class="govuk-tabs__list-item">
                       <a class="govuk-tabs__tab" href="#phase1-anti"
-                        >Legacy Anti-patterns</a
+                        >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
@@ -783,7 +825,7 @@
                       <ul class="govuk-list">
                         <li class="govuk-!-margin-bottom-4">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             >Information Governance</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
@@ -1004,8 +1046,7 @@
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">2</span> Plan Checking &
-                    Assessment</span
+                    ><span class="phase-number">2</span> Validation</span
                   >
                 </h3>
               </div>
@@ -1021,7 +1062,7 @@
                     </li>
                     <li class="govuk-tabs__list-item">
                       <a class="govuk-tabs__tab" href="#phase2-anti"
-                        >Legacy Anti-patterns</a
+                        >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
@@ -1033,6 +1074,494 @@
 
                   <!-- Process -->
                   <div class="govuk-tabs__panel" id="phase2-process">
+                    <p class="govuk-body">
+                      <strong>The process:</strong> Local authority staff must
+                      ensure that the correct type of application has been made
+                      and that an appropriate payment has been received.
+                      Depending on the type of works, a bespoke quote will be
+                      made and payment taken.
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Required LGAM Taxonomy Nodes:</strong>
+                    </p>
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--channel">Email</span>
+                      <span class="govuk-tag lgam-tag--capability"
+                        >Payments</span
+                      >
+                      <span class="govuk-tag lgam-tag--data"
+                        >Geospatial data</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Anti-patterns -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase2-anti"
+                  >
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--anti"
+                        >Anti-pattern: Geospatial checks after submission</span
+                      >
+                      <p class="govuk-body">
+                        Dependent on location and types of work, certain types
+                        of check are restricted. Currently these checks only
+                        happen after submission, meaning delays for customers.
+                      </p>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 200"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Anti-pattern: the applicant submits through a generic web form, an officer manually checks location constraints in a separate GIS after submission, and invalid applications are sent back for resubmission, causing delay."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="60"
+                          width="110"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="65"
+                          y="90"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Applicant
+                        </text>
+                        <path
+                          d="M 120 85 L 150 85"
+                          fill="none"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="160"
+                          y="60"
+                          width="170"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="245"
+                          y="82"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Generic web form
+                        </text>
+                        <text
+                          x="245"
+                          y="98"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (no location checks)
+                        </text>
+                        <path
+                          d="M 330 85 L 400 85"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="365"
+                          y="75"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#d4351c"
+                        >
+                          Submitted
+                        </text>
+                        <rect
+                          x="410"
+                          y="60"
+                          width="130"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="475"
+                          y="82"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Officer
+                        </text>
+                        <text
+                          x="475"
+                          y="98"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (manual validation)
+                        </text>
+                        <path
+                          d="M 540 85 L 610 85"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="575"
+                          y="75"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#d4351c"
+                        >
+                          GIS lookup
+                        </text>
+                        <rect
+                          x="620"
+                          y="60"
+                          width="170"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="705"
+                          y="82"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          GIS
+                        </text>
+                        <text
+                          x="705"
+                          y="98"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (separate system)
+                        </text>
+                        <path
+                          d="M 475 110 L 475 160 L 65 160 L 65 120"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          stroke-dasharray="4"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="270"
+                          y="178"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#d4351c"
+                        >
+                          Wrong application type or fee: sent back to resubmit (delay)
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Target -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase2-target"
+                  >
+                    <div class="feature-box">
+                      <h4 class="govuk-heading-s">
+                        Best Practice: Integrated spatial checks at submission
+                      </h4>
+                      <p class="govuk-body">
+                        Using a rules-as-code submission platform that
+                        integrates with available geospatial information means
+                        that the correct application type can be made first
+                        time, reducing errors and delays.
+                      </p>
+
+                      <hr
+                        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+                      />
+                      <h5 class="govuk-heading-s">Real-world impact</h5>
+                      <ul class="govuk-list">
+                        <li class="govuk-!-margin-bottom-4">
+                          <strong
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
+                            >Increased sustainability</strong
+                          >
+                          <p class="govuk-body govuk-!-margin-bottom-0">
+                            Providing a better customer experience will increase
+                            repeat business and improve the sustainability of
+                            council services in a competitive market.
+                          </p>
+                        </li>
+                        <li class="govuk-!-margin-bottom-0">
+                          <strong
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
+                            >Faster processing</strong
+                          >
+                          <p class="govuk-body govuk-!-margin-bottom-0">
+                            By automating checks in the submission process there
+                            is less time taken to validate applications,
+                            reducing processing times and decreasing the burden
+                            on staff.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 240"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Target architecture: the applicant uses a rules-as-code form which calls an API Gateway to look up geospatial constraint layers and calculate the fee or quote, so the correct application type and fee are set first time."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="95"
+                          width="110"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="65"
+                          y="125"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Applicant
+                        </text>
+                        <path
+                          d="M 120 120 L 150 120"
+                          fill="none"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="160"
+                          y="95"
+                          width="180"
+                          height="50"
+                          fill="#fff"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="250"
+                          y="117"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Rules-as-code form
+                        </text>
+                        <text
+                          x="250"
+                          y="133"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (guided submission)
+                        </text>
+                        <path
+                          d="M 340 120 L 400 120"
+                          fill="none"
+                          stroke="#1d70b8"
+                          stroke-width="2"
+                          marker-end="url(#arrow-blue)"
+                        />
+                        <text
+                          x="370"
+                          y="110"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#1d70b8"
+                        >
+                          API calls
+                        </text>
+                        <rect
+                          x="410"
+                          y="95"
+                          width="130"
+                          height="50"
+                          fill="#1d70b8"
+                          rx="4"
+                        />
+                        <text
+                          x="475"
+                          y="125"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#fff"
+                        >
+                          API Gateway
+                        </text>
+                        <path
+                          d="M 540 120 L 580 120 L 580 60 L 620 60"
+                          fill="none"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="630"
+                          y="35"
+                          width="160"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="710"
+                          y="57"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Geospatial data
+                        </text>
+                        <text
+                          x="710"
+                          y="73"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (constraint layers)
+                        </text>
+                        <path
+                          d="M 540 120 L 580 120 L 580 180 L 620 180"
+                          fill="none"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="630"
+                          y="155"
+                          width="160"
+                          height="50"
+                          fill="#fff"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="710"
+                          y="177"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Payments
+                        </text>
+                        <text
+                          x="710"
+                          y="193"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (fixed fee or quote)
+                        </text>
+                        <text
+                          x="250"
+                          y="175"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#00703c"
+                        >
+                          Correct application type and fee set first time
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button"
+                    ><span class="phase-number">3</span> Design check</span
+                  >
+                </h3>
+              </div>
+              <div class="govuk-accordion__section-content">
+                <div class="govuk-tabs" data-module="govuk-tabs">
+                  <ul class="govuk-tabs__list">
+                    <li
+                      class="govuk-tabs__list-item govuk-tabs__list-item--selected"
+                    >
+                      <a class="govuk-tabs__tab" href="#phase3-process"
+                        >Business Process</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase3-anti"
+                        >Anti-patterns</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase3-target"
+                        >Target Architecture</a
+                      >
+                    </li>
+                  </ul>
+
+                  <!-- Process -->
+                  <div class="govuk-tabs__panel" id="phase3-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> Building Control surveyors
                       must thoroughly review complex structural plans and
@@ -1059,7 +1588,7 @@
                   <!-- Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase2-anti"
+                    id="phase3-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -1068,7 +1597,7 @@
                       <p class="govuk-body">
                         Architects design modern buildings using rich,
                         data-heavy 3D Building Information Models (BIM).
-                        However, legacy council systems force applicants to
+                        However, current council systems force applicants to
                         "flatten" these models into hundreds of static 2D PDF
                         blueprints for submission. Surveyors then spend hours
                         manually measuring distances on screen, losing all the
@@ -1212,7 +1741,7 @@
                   <!-- Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase2-target"
+                    id="phase3-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -1235,7 +1764,7 @@
                       <ul class="govuk-list">
                         <li class="govuk-!-margin-bottom-4">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             >Regulatory Accuracy</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
@@ -1412,13 +1941,12 @@
               </div>
             </div>
 
-            <!-- Phase 3 -->
+            <!-- Phase 4 -->
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">3</span> Site Inspections &
-                    Fieldwork</span
+                    ><span class="phase-number">4</span> Site inspections</span
                   >
                 </h3>
               </div>
@@ -1428,24 +1956,24 @@
                     <li
                       class="govuk-tabs__list-item govuk-tabs__list-item--selected"
                     >
-                      <a class="govuk-tabs__tab" href="#phase3-process"
+                      <a class="govuk-tabs__tab" href="#phase4-process"
                         >Business Process</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase3-anti"
-                        >Legacy Anti-patterns</a
+                      <a class="govuk-tabs__tab" href="#phase4-anti"
+                        >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase3-target"
+                      <a class="govuk-tabs__tab" href="#phase4-target"
                         >Target Architecture</a
                       >
                     </li>
                   </ul>
 
                   <!-- Process -->
-                  <div class="govuk-tabs__panel" id="phase3-process">
+                  <div class="govuk-tabs__panel" id="phase4-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> The core of Building
                       Control. Surveyors travel to active construction sites to
@@ -1469,7 +1997,7 @@
                   <!-- Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase3-anti"
+                    id="phase4-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -1609,7 +2137,7 @@
                   <!-- Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase3-target"
+                    id="phase4-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -1645,7 +2173,7 @@
                         </li>
                         <li class="govuk-!-margin-bottom-0">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             >Data Quality & Compliance</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
@@ -1827,13 +2355,13 @@
               </div>
             </div>
 
-            <!-- Phase 4 -->
+            <!-- Phase 5 -->
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">4</span> Certification &
-                    Compliance</span
+                    ><span class="phase-number">5</span> Certifications and
+                    Notices</span
                   >
                 </h3>
               </div>
@@ -1843,28 +2371,484 @@
                     <li
                       class="govuk-tabs__list-item govuk-tabs__list-item--selected"
                     >
-                      <a class="govuk-tabs__tab" href="#phase4-process"
+                      <a class="govuk-tabs__tab" href="#phase5-process"
                         >Business Process</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase4-anti"
-                        >Legacy Anti-patterns</a
+                      <a class="govuk-tabs__tab" href="#phase5-anti"
+                        >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase4-target"
+                      <a class="govuk-tabs__tab" href="#phase5-target"
                         >Target Architecture</a
                       >
                     </li>
                   </ul>
 
                   <!-- Process -->
-                  <div class="govuk-tabs__panel" id="phase4-process">
+                  <div class="govuk-tabs__panel" id="phase5-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> Following satisfactory
                       inspections, the council issues a formal Completion
-                      Certificate. Crucially, post-Grenfell legislation requires
+                      Certificates.
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Required LGAM Taxonomy Nodes:</strong>
+                    </p>
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--capability"
+                        >Data quality and governance</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Anti-patterns -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase5-anti"
+                  >
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--anti"
+                        >Anti-pattern: Non-public registers</span
+                      >
+                      <p class="govuk-body">
+                        Building Control information that is not publicly
+                        accessible means that interested parties in a property
+                        are more reliant on paid for conveyancing services. This
+                        slows down the housing market and inhibits labour
+                        markets flexibility.
+                      </p>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 200"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Anti-pattern: completion records sit in an internal case system, so buyers and owners must go through an officer and a conveyancer's paid search to get them, causing delay."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="75"
+                          width="150"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="85"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Case system
+                        </text>
+                        <text
+                          x="85"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (completion records)
+                        </text>
+                        <path
+                          d="M 160 100 L 235 100"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="197"
+                          y="90"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#d4351c"
+                        >
+                          Internal only
+                        </text>
+                        <rect
+                          x="245"
+                          y="75"
+                          width="120"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="305"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Officer
+                        </text>
+                        <text
+                          x="305"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (manual reply)
+                        </text>
+                        <path
+                          d="M 365 100 L 435 100"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="400"
+                          y="90"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#d4351c"
+                        >
+                          Paid search
+                        </text>
+                        <rect
+                          x="445"
+                          y="75"
+                          width="150"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="520"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Conveyancer
+                        </text>
+                        <text
+                          x="520"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (paid intermediary)
+                        </text>
+                        <path
+                          d="M 595 100 L 650 100"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="622"
+                          y="90"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#d4351c"
+                        >
+                          Delay
+                        </text>
+                        <rect
+                          x="660"
+                          y="75"
+                          width="130"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="725"
+                          y="105"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Buyer / owner
+                        </text>
+                        <text
+                          x="400"
+                          y="160"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#d4351c"
+                        >
+                          No direct public access to building control records
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Target -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase5-target"
+                  >
+                    <div class="feature-box">
+                      <h4 class="govuk-heading-s">
+                        Best Practice: Public registers of Building Control
+                        information
+                      </h4>
+                      <p class="govuk-body">
+                        Providing publicly accessible records supports a
+                        greater degree of self-service and provides the basis
+                        for better integration of building control information
+                        into other systems such as Section 106 monitoring.
+                      </p>
+
+                      <hr
+                        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+                      />
+                      <h5 class="govuk-heading-s">Real-world impact</h5>
+                      <ul class="govuk-list">
+                        <li class="govuk-!-margin-bottom-4">
+                          <strong
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
+                            >Increase planning obligation compliance</strong
+                          >
+                          <p class="govuk-body govuk-!-margin-bottom-0">
+                            Linking completions of sites to the planning
+                            obligations which exist there helps proactive
+                            monitoring and increases the percentage of revenue
+                            collected with less spend on manual monitoring
+                            activities.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 240"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Target architecture: when completion is recorded in the workflow engine, an event goes through the API Gateway to publish the record to a public register for self-service and to notify Section 106 planning obligation monitoring."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="95"
+                          width="160"
+                          height="50"
+                          fill="#fff"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="90"
+                          y="117"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Workflow engine
+                        </text>
+                        <text
+                          x="90"
+                          y="133"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (completion recorded)
+                        </text>
+                        <path
+                          d="M 170 120 L 290 120"
+                          fill="none"
+                          stroke="#1d70b8"
+                          stroke-width="2"
+                          marker-end="url(#arrow-blue)"
+                        />
+                        <text
+                          x="230"
+                          y="110"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#1d70b8"
+                        >
+                          Completion event
+                        </text>
+                        <rect
+                          x="300"
+                          y="95"
+                          width="140"
+                          height="50"
+                          fill="#1d70b8"
+                          rx="4"
+                        />
+                        <text
+                          x="370"
+                          y="125"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#fff"
+                        >
+                          API Gateway
+                        </text>
+                        <path
+                          d="M 440 120 L 490 120 L 490 60 L 540 60"
+                          fill="none"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="515"
+                          y="50"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#00703c"
+                        >
+                          Publish
+                        </text>
+                        <rect
+                          x="550"
+                          y="35"
+                          width="220"
+                          height="50"
+                          fill="#fff"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="660"
+                          y="57"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Public register
+                        </text>
+                        <text
+                          x="660"
+                          y="73"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (open data, self-service)
+                        </text>
+                        <path
+                          d="M 440 120 L 490 120 L 490 180 L 540 180"
+                          fill="none"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="515"
+                          y="170"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          Notify
+                        </text>
+                        <rect
+                          x="550"
+                          y="155"
+                          width="220"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="660"
+                          y="177"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Section 106 monitoring
+                        </text>
+                        <text
+                          x="660"
+                          y="193"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (planning obligations)
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 6 -->
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button"
+                    ><span class="phase-number">6</span> Reporting KPIs</span
+                  >
+                </h3>
+              </div>
+              <div class="govuk-accordion__section-content">
+                <div class="govuk-tabs" data-module="govuk-tabs">
+                  <ul class="govuk-tabs__list">
+                    <li
+                      class="govuk-tabs__list-item govuk-tabs__list-item--selected"
+                    >
+                      <a class="govuk-tabs__tab" href="#phase6-process"
+                        >Business Process</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase6-anti"
+                        >Anti-patterns</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase6-target"
+                        >Target Architecture</a
+                      >
+                    </li>
+                  </ul>
+
+                  <!-- Process -->
+                  <div class="govuk-tabs__panel" id="phase6-process">
+                    <p class="govuk-body">
+                      <strong>The process:</strong> Post-Grenfell legislation requires
                       stringent, ongoing data sharing regarding High-Risk
                       Buildings (HRBs) with the central Building Safety
                       Regulator (BSR).
@@ -1885,7 +2869,7 @@
                   <!-- Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase4-anti"
+                    id="phase6-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -2014,7 +2998,7 @@
                   <!-- Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase4-target"
+                    id="phase6-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -2036,7 +3020,7 @@
                       <ul class="govuk-list">
                         <li class="govuk-!-margin-bottom-4">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             >Regulatory Compliance</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
@@ -2298,34 +3282,205 @@
           class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
         />
 
-        <section id="platforms">
-          <h2 class="govuk-heading-l">Platforms & tools</h2>
+        <section id="what-makes-building-control-different">
+          <h2 class="govuk-heading-l">
+            What makes building control technically different
+          </h2>
+
           <p class="govuk-body">
-            The market for Building Control software is heavily focused on
-            integrated enterprise platforms that bundle back-office workflow
-            with mobile inspection capabilities.
+            Every council domain has integration points with shared
+            capabilities. Building control is architecturally distinctive in
+            several ways that affect how you design those integrations:
           </p>
 
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              <strong>NEC Assure:</strong> Widely used cloud platform covering
-              Building Control workflow and mobile field working.
-            </li>
-            <li>
-              <strong>Idox Uniform / OnSite:</strong> Established enterprise
-              suite offering deep back-office capability paired with dedicated
-              tablet applications for offline fieldwork.
-            </li>
-            <li>
-              <strong>Tascomi (Idox):</strong> Cloud-native regulatory services
-              software with responsive web interfaces often utilized by mobile
-              officers.
-            </li>
-            <li>
-              <strong>Agile Applications:</strong> Specialized local government
-              platform covering regulatory services.
-            </li>
-          </ul>
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              The work happens on site as well as at a desk
+            </h3>
+            <p class="govuk-body">
+              Surveyors spend much of their time inspecting live construction
+              sites, often in basements, rural areas or partly built structures
+              with no reliable signal. Device security policies and unreliable
+              mobile apps mean many surveyors copy drawings to personal cloud
+              storage before leaving the office. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Field tools must work offline and sync back to the case record
+                when a connection returns, without creating duplicate or
+                conflicting records.
+              </li>
+              <li>
+                Approved plans and case history must be available on the device
+                through the official system, not copied to local or personal
+                storage.
+              </li>
+              <li>
+                Site photos and notes need to be date-stamped, geotagged and
+                linked to a specific visit as they are captured, because they
+                may later be used as evidence in enforcement or prosecution.
+              </li>
+              <li>
+                On large developments a surveyor may inspect the same element
+                on many identical plots in one visit, so observations need to
+                be recorded once and applied to several plots.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              A competitive, fee-earning service with bespoke pricing
+            </h3>
+            <p class="govuk-body">
+              Unlike most council services, local authority building control
+              competes directly with private
+              <abbr title="Registered Building Control Approvers">RBCAs</abbr>.
+              It must recover its costs from fees while still funding
+              non-chargeable statutory work such as enforcement and dangerous
+              structures. A significant proportion of fees are quoted case by
+              case rather than taken from a fixed schedule. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Payment integration must support both payment at submission and
+                a submit-now, pay-later route once a bespoke quote has been
+                agreed.
+              </li>
+              <li>
+                Time spent on each case needs to be captured, ideally without
+                manual timesheets, so that fees can be set with confidence and
+                compared with the work actually done.
+              </li>
+              <li>
+                Customer experience is a commercial concern. Householders often
+                leave the choice of provider to their builder or architect, so
+                builders and agents who cannot see progress or book inspections
+                easily may move their next job to a private provider.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Data arrives from other organisations, mostly as documents
+            </h3>
+            <p class="govuk-body">
+              Local authorities remain the statutory backstop and keep the
+              public register, so they receive data from organisations outside
+              the council. Initial Notices from RBCAs and
+              <abbr title="Competent Person Scheme">CPS</abbr> notifications
+              (for example from Gas Safe) are generated from structured systems,
+              then sent as PDFs or file attachments and re-keyed by hand. This
+              means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Inbound integration needs shared data standards and validation
+                at source, not just a mailbox, so that notices can be read and
+                routed automatically.
+              </li>
+              <li>
+                Notices feed the statutory public register, so errors made when
+                re-keying them end up in the public record.
+              </li>
+              <li>
+                Property identification is a constant source of friction:
+                missing or wrong
+                <abbr title="Unique Property Reference Number">UPRNs</abbr>,
+                new developments without official addresses, and notices sent to
+                the wrong authority. UPRN validation should happen before
+                submission.
+              </li>
+              <li>
+                The relationship continues through the whole project, including
+                amendments, extensions of time, cancellations, reversions to the
+                local authority and final certificates, so standards must cover
+                the lifecycle, not just the first notice.
+              </li>
+              <li>
+                Most back-office products are closed and offer no APIs, so
+                exchanging data with RBCAs, the
+                <abbr title="Building Safety Regulator">BSR</abbr> or other
+                council services usually depends on what the supplier chooses
+                to expose.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Non-chargeable statutory work: dangerous structures and
+              enforcement
+            </h3>
+            <p class="govuk-body">
+              Local authorities are the statutory backstop for building safety.
+              They must respond to reports of dangerous structures, often
+              urgently and outside normal hours, and enforce breaches of the
+              Building Regulations, including on work that reverts from RBCAs.
+              Neither is funded by fees, and both draw on the same surveyors as
+              fee-earning work. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Dangerous structures need their own reporting route for the
+                public and partners such as the fire service, with urgent
+                triage and out-of-hours allocation, separate from planned
+                inspections.
+              </li>
+              <li>
+                Enforcement can end in prosecution, so site evidence, notices
+                and correspondence must be complete, timestamped and tamper
+                evident, able to stand up in court.
+              </li>
+              <li>
+                Time spent on non-chargeable work should be recorded separately
+                from fee-earning work, so that it is visible in reporting and
+                can be set against cost recovery.
+              </li>
+              <li>
+                These cases often start with no existing application, so the
+                system must be able to create a case from a property or
+                location alone.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Regulatory reporting and the golden thread
+            </h3>
+            <p class="govuk-body">
+              Since the Building Safety Act, building control sits under
+              national oversight from the Building Safety Regulator. Local
+              authorities report performance data to the BSR each quarter
+              using a prescribed spreadsheet, and the golden thread requires
+              information about higher-risk buildings to be digital, secure
+              and auditable throughout their life. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                KPIs should be generated from case data as a by-product of the
+                work, not rebuilt by hand each quarter from separate trackers.
+              </li>
+              <li>
+                Every action (emails sent, requirements raised, inspections
+                recorded) needs an automatic audit trail. Staff currently
+                duplicate entries up to three times to prove that something was
+                done.
+              </li>
+              <li>
+                Records must remain authoritative for the life of the building,
+                not just the life of the case, which affects retention and
+                records management.
+              </li>
+              <li>
+                New duties such as the Building Safety Levy add further
+                reporting and monitoring dependencies that systems will need to
+                support.
+              </li>
+            </ul>
+          </div>
         </section>
 
         <hr
