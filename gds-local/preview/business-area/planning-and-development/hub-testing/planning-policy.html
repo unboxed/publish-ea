@@ -29,6 +29,14 @@
         font-size: 14px;
       }
 
+      /* Architecture callout box */
+      .arch-box {
+        border-top: 4px solid #000080;
+        background: #f3f2f1;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
       /* SVG Diagram Container */
       .arch-diagram-container {
         background: #fff;
@@ -147,7 +155,7 @@
           </li>
           <li class="app-navigation__item">
             <a class="app-navigation__link" href="#the-journey"
-              >The technical lifecycle</a
+              >Business process and user journey</a
             >
           </li>
           <li class="app-navigation__item">
@@ -156,8 +164,10 @@
             >
           </li>
           <li class="app-navigation__item">
-            <a class="app-navigation__link" href="#platforms"
-              >Platforms & tools</a
+            <a
+              class="app-navigation__link"
+              href="#what-makes-planning-policy-different"
+              >What makes planning policy different</a
             >
           </li>
         </ul>
@@ -301,23 +311,153 @@
           <table class="govuk-table govuk-!-margin-bottom-8">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th
-                  scope="col"
-                  class="govuk-table__header govuk-!-width-one-third"
-                >
-                  LGAM Mapping
-                </th>
+                <th scope="col" class="govuk-table__header">LGAM Layer</th>
+                <th scope="col" class="govuk-table__header">LGAM Element</th>
                 <th scope="col" class="govuk-table__header">
-                  Context in Planning
+                  Context in Planning Policy
                 </th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Workflow</span>
+                </td>
+                <td class="govuk-table__cell">
+                  Making a local plan is a multi-year project which needs clear
+                  management and communication between policy officers working
+                  on the team.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Forms</span>
+                </td>
+                <td class="govuk-table__cell">
+                  A call for sites is a key aspect of the process, and is best
+                  done by encouraging structured and geospatial data
+                  submissions.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--business-area"
+                    >Business Areas</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--business-area"
+                    >Democratic services</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  Plan-making requires regular formal and informal engagement
+                  with council members to progress.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--corporate"
+                    >Corporate Areas</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--corporate"
+                    >Geographical</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  Plan-making requires the production of maps to describe
+                  various aspects of the plan, including evidence, where
+                  policies are in effect and as part of the site selection
+                  process.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--interface"
+                    >Council Interfaces</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--interface">Websites</span
+                  ><br /><span class="govuk-body-s" style="color: #505a5f"
+                    >(Engagement)</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  Interactive, map-based consultation platforms allowing
+                  citizens to drop pins and leave sentiment-driven feedback on
+                  proposed zoning changes during plan consultations.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--interface"
+                    >Council Interfaces</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--interface">Websites</span
+                  ><br /><span class="govuk-body-s" style="color: #505a5f"
+                    >(Examination library and timetable)</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  Plan-making authorities are required to publish timetables for
+                  their plan-making process and make a publicly accessible
+                  examination library of plan documents.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--integration"
+                    >Integration</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--integration"
+                    >API management and gateways</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  Once the Plan is adopted, exposing the spatial policies as
+                  "Rules-as-code" APIs to be consumed directly by the
+                  Development Management forms engines.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--security">Security</span>
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--security"
+                    >Identity and access management (IAM)</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  If a joint local plan is being made then employees from a
+                  range of local authority bodies will need to access and
+                  collaborate in the same workspaces.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
                   <span class="govuk-tag lgam-tag--data"
                     >Data and Information</span
                   >
+                </td>
+                <td class="govuk-table__cell">
                   <span class="govuk-tag lgam-tag--data">Geospatial data</span>
                 </td>
                 <td class="govuk-table__cell">
@@ -331,6 +471,8 @@
                   <span class="govuk-tag lgam-tag--data"
                     >Data and Information</span
                   >
+                </td>
+                <td class="govuk-table__cell">
                   <span class="govuk-tag lgam-tag--data"
                     >Data storage and warehousing</span
                   >
@@ -343,33 +485,18 @@
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
-                  <span class="govuk-tag lgam-tag--interface"
-                    >Council Interfaces</span
-                  >
-                  <span class="govuk-tag lgam-tag--interface">Websites</span
-                  ><br /><span class="govuk-body-s" style="color: #505a5f"
-                    >(Engagement)</span
+                  <span class="govuk-tag lgam-tag--data"
+                    >Data and Information</span
                   >
                 </td>
                 <td class="govuk-table__cell">
-                  Interactive, map-based consultation platforms allowing
-                  citizens to drop pins and leave sentiment-driven feedback on
-                  proposed zoning changes (Regulation 18/19).
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <span class="govuk-tag lgam-tag--integration"
-                    >Integration</span
-                  >
-                  <span class="govuk-tag lgam-tag--integration"
-                    >API management and gateways</span
+                  <span class="govuk-tag lgam-tag--data"
+                    >Data catalogue &amp; metadata management</span
                   >
                 </td>
                 <td class="govuk-table__cell">
-                  Once the Plan is adopted, exposing the spatial policies as
-                  "Rules-as-code" APIs to be consumed directly by the
-                  Development Management forms engines.
+                  Keeping a clear track of plan and evidence document versions
+                  is key for compliant plan-making.
                 </td>
               </tr>
             </tbody>
@@ -381,7 +508,40 @@
         />
 
         <section id="the-journey">
-          <h2 class="govuk-heading-l">The technical lifecycle</h2>
+          <!-- Shared arrowhead markers for the diagrams below -->
+          <svg
+            width="0"
+            height="0"
+            aria-hidden="true"
+            focusable="false"
+            style="position: absolute"
+          >
+            <defs>
+              <marker
+                id="arrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0b0c0c"></path>
+              </marker>
+              <marker
+                id="arrow-blue"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#1d70b8"></path>
+              </marker>
+            </defs>
+          </svg>
+          <h2 class="govuk-heading-l">Business process</h2>
           <p class="govuk-body">
             This section outlines the process of building the Local Plan. Expand
             each phase to compare the legacy architectural baseline against
@@ -398,8 +558,8 @@
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">1</span> Evidence Base & Site
-                    Allocation</span
+                    ><span class="phase-number">1</span> Scoping and early
+                    participation</span
                   >
                 </h3>
               </div>
@@ -415,7 +575,7 @@
                     </li>
                     <li class="govuk-tabs__list-item">
                       <a class="govuk-tabs__tab" href="#phase1-anti"
-                        >Legacy Anti-patterns</a
+                        >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
@@ -427,6 +587,376 @@
 
                   <!-- Process -->
                   <div class="govuk-tabs__panel" id="phase1-process">
+                    <p class="govuk-body">
+                      <strong>The process:</strong> Plan-making teams must run a
+                      scoping consultation and invite feedback throughout the
+                      plan-making process. They also need to set up project
+                      management practices.
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Required LGAM Taxonomy Nodes:</strong>
+                    </p>
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--interface"
+                        >Websites</span
+                      >
+                      <span class="govuk-tag lgam-tag--capability"
+                        >Workflow</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Anti-patterns -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase1-anti"
+                  >
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--anti"
+                        >Anti-pattern: Plan-making without tracking</span
+                      >
+                      <p class="govuk-body">
+                        A plan-making process which uses individual documents
+                        and fragmented information means manual work is required
+                        to find and access key information, as well as to
+                        provide transparency on the plan-making process to
+                        stakeholders.
+                      </p>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 200"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Anti-pattern: a manager tracks plan-making through many separate documents, so stakeholders have no clear view of progress."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="75"
+                          width="160"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="90"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Manager
+                        </text>
+                        <text
+                          x="90"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (tracking by hand)
+                        </text>
+                        <path
+                          d="M 170 100 L 260 100"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="270"
+                          y="75"
+                          width="200"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="370"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Many documents
+                        </text>
+                        <text
+                          x="370"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (Word, Excel, email)
+                        </text>
+                        <path
+                          d="M 470 100 L 600 100"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          stroke-dasharray="4"
+                        />
+                        <line
+                          x1="525"
+                          y1="85"
+                          x2="545"
+                          y2="115"
+                          stroke="#d4351c"
+                          stroke-width="3"
+                        />
+                        <line
+                          x1="545"
+                          y1="85"
+                          x2="525"
+                          y2="115"
+                          stroke="#d4351c"
+                          stroke-width="3"
+                        />
+                        <text
+                          x="535"
+                          y="75"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#d4351c"
+                        >
+                          No visibility
+                        </text>
+                        <rect
+                          x="610"
+                          y="75"
+                          width="180"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="700"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Stakeholders
+                        </text>
+                        <text
+                          x="700"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (public, members, PINS)
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Target -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase1-target"
+                  >
+                    <div class="feature-box">
+                      <h4 class="govuk-heading-s">
+                        Best Practice: Plan-making workflow tool
+                      </h4>
+                      <p class="govuk-body">
+                        By using a dedicated tool for plan-making, documents,
+                        activities and audit logs can be held in one place. It
+                        removes the manual burden of tracking progress and
+                        supports transparency with key stakeholders.
+                      </p>
+
+                      <hr
+                        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+                      />
+                      <h5 class="govuk-heading-s">Real-world impact</h5>
+                      <ul class="govuk-list">
+                        <li class="govuk-!-margin-bottom-0">
+                          <strong
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
+                            >Reduced work to provide updates to
+                            stakeholders</strong
+                          >
+                          <p class="govuk-body govuk-!-margin-bottom-0">
+                            Fewer officers spend time writing reports and
+                            preparing summaries of progress.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 200"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Target architecture: managers and officers work in a plan-making tool that holds documents, activity and audit logs, which shares progress with stakeholders."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="75"
+                          width="200"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="110"
+                          y="105"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Managers and officers
+                        </text>
+                        <path
+                          d="M 210 100 L 255 100"
+                          fill="none"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="265"
+                          y="75"
+                          width="220"
+                          height="50"
+                          fill="#fff"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="375"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Plan-making tool
+                        </text>
+                        <text
+                          x="375"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (documents, activity, audit log)
+                        </text>
+                        <path
+                          d="M 485 100 L 590 100"
+                          fill="none"
+                          stroke="#1d70b8"
+                          stroke-width="2"
+                          marker-end="url(#arrow-blue)"
+                        />
+                        <text
+                          x="537"
+                          y="88"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#1d70b8"
+                        >
+                          Shared progress
+                        </text>
+                        <rect
+                          x="600"
+                          y="75"
+                          width="190"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="695"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Stakeholders
+                        </text>
+                        <text
+                          x="695"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (public, members, PINS)
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button"
+                    ><span class="phase-number">2</span> Evidence base and site
+                    selection</span
+                  >
+                </h3>
+              </div>
+              <div class="govuk-accordion__section-content">
+                <div class="govuk-tabs" data-module="govuk-tabs">
+                  <ul class="govuk-tabs__list">
+                    <li
+                      class="govuk-tabs__list-item govuk-tabs__list-item--selected"
+                    >
+                      <a class="govuk-tabs__tab" href="#phase2-process"
+                        >Business Process</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase2-anti"
+                        >Anti-patterns</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase2-target"
+                        >Target Architecture</a
+                      >
+                    </li>
+                  </ul>
+
+                  <!-- Process -->
+                  <div class="govuk-tabs__panel" id="phase2-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> Policy officers must gather
                       massive amounts of demographic, environmental, and
@@ -454,7 +984,7 @@
                   <!-- Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase1-anti"
+                    id="phase2-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -614,7 +1144,7 @@
                   <!-- Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase1-target"
+                    id="phase2-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -638,7 +1168,7 @@
                       <ul class="govuk-list">
                         <li class="govuk-!-margin-bottom-4">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             >Legal Defensibility</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
@@ -841,13 +1371,12 @@
               </div>
             </div>
 
-            <!-- Phase 2 -->
+            <!-- Phase 3 -->
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">2</span> Public Engagement &
-                    Consultation</span
+                    ><span class="phase-number">3</span> Consultation</span
                   >
                 </h3>
               </div>
@@ -857,24 +1386,24 @@
                     <li
                       class="govuk-tabs__list-item govuk-tabs__list-item--selected"
                     >
-                      <a class="govuk-tabs__tab" href="#phase2-process"
+                      <a class="govuk-tabs__tab" href="#phase3-process"
                         >Business Process</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase2-anti"
-                        >Legacy Anti-patterns</a
+                      <a class="govuk-tabs__tab" href="#phase3-anti"
+                        >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase2-target"
+                      <a class="govuk-tabs__tab" href="#phase3-target"
                         >Target Architecture</a
                       >
                     </li>
                   </ul>
 
                   <!-- Process -->
-                  <div class="govuk-tabs__panel" id="phase2-process">
+                  <div class="govuk-tabs__panel" id="phase3-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> The council must consult the
                       public on the draft plan. Citizens, developers, and
@@ -898,7 +1427,7 @@
                   <!-- Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase2-anti"
+                    id="phase3-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -1037,7 +1566,7 @@
                   <!-- Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase2-target"
+                    id="phase3-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -1060,7 +1589,7 @@
                       <ul class="govuk-list">
                         <li class="govuk-!-margin-bottom-4">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             >Democratic Reach</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
@@ -1247,13 +1776,13 @@
               </div>
             </div>
 
-            <!-- Phase 3 -->
+            <!-- Phase 4 -->
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">3</span> Adoption &
-                    Integration</span
+                    ><span class="phase-number">4</span> Gateways and
+                    examination</span
                   >
                 </h3>
               </div>
@@ -1263,24 +1792,504 @@
                     <li
                       class="govuk-tabs__list-item govuk-tabs__list-item--selected"
                     >
-                      <a class="govuk-tabs__tab" href="#phase3-process"
+                      <a class="govuk-tabs__tab" href="#phase4-process"
                         >Business Process</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase3-anti"
-                        >Legacy Anti-patterns</a
+                      <a class="govuk-tabs__tab" href="#phase4-anti"
+                        >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase3-target"
+                      <a class="govuk-tabs__tab" href="#phase4-target"
                         >Target Architecture</a
                       >
                     </li>
                   </ul>
 
                   <!-- Process -->
-                  <div class="govuk-tabs__panel" id="phase3-process">
+                  <div class="govuk-tabs__panel" id="phase4-process">
+                    <p class="govuk-body">
+                      <strong>The process:</strong> Policy teams need to share
+                      their work in progress and complete plans at formal
+                      checkpoints with inspectors from the Planning Inspectorate
+                      (<abbr title="Planning Inspectorate">PINS</abbr>), who
+                      need to be able to interrogate and comment on the content
+                      easily. The information needs to be shared publicly to
+                      give all stakeholders visibility of progress at these key
+                      points.
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Required LGAM Taxonomy Nodes:</strong>
+                    </p>
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--data"
+                        >Data storage and warehousing</span
+                      >
+                      <span class="govuk-tag lgam-tag--interface"
+                        >Websites</span
+                      >
+                      <span class="govuk-tag lgam-tag--interface"
+                        >API gateways</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Anti-patterns -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase4-anti"
+                  >
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--anti"
+                        >Anti-pattern: Manual export and import of plan-making
+                        information</span
+                      >
+                      <p class="govuk-body">
+                        Currently plan-making teams spend a lot of time
+                        preparing document stores by sifting through internal
+                        repositories and then publishing them on their council
+                        websites. These documents aren't editable in a shared
+                        way by inspectors, so comments and recommendations are
+                        made in separate documents and then applied manually by
+                        officers afterwards, duplicating effort and increasing
+                        the risk of error.
+                      </p>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 270"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Anti-pattern: an officer prepares documents by hand, exports static files and uploads them to the PINS portal. The inspector shares changes in a separate document, and the officer makes the changes manually."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="30"
+                          width="210"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="115"
+                          y="52"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Officer
+                        </text>
+                        <text
+                          x="115"
+                          y="68"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (manual document preparation)
+                        </text>
+                        <path
+                          d="M 220 55 L 285 55"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="295"
+                          y="30"
+                          width="210"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="400"
+                          y="52"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Static export
+                        </text>
+                        <text
+                          x="400"
+                          y="68"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (PDF bundle)
+                        </text>
+                        <path
+                          d="M 505 55 L 570 55"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="580"
+                          y="30"
+                          width="210"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="685"
+                          y="52"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          PINS portal
+                        </text>
+                        <text
+                          x="685"
+                          y="68"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (manual upload)
+                        </text>
+                        <path
+                          d="M 685 80 L 685 175"
+                          fill="none"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text x="695" y="135" font-size="11" fill="#505a5f">
+                          Inspector access
+                        </text>
+                        <rect
+                          x="580"
+                          y="185"
+                          width="210"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="685"
+                          y="207"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Inspector
+                        </text>
+                        <text
+                          x="685"
+                          y="223"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (reviews static documents)
+                        </text>
+                        <path
+                          d="M 580 210 L 515 210"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="295"
+                          y="185"
+                          width="210"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="400"
+                          y="207"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Changes document
+                        </text>
+                        <text
+                          x="400"
+                          y="223"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (separate file)
+                        </text>
+                        <path
+                          d="M 295 210 L 230 210"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="10"
+                          y="185"
+                          width="210"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="115"
+                          y="207"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Officer
+                        </text>
+                        <text
+                          x="115"
+                          y="223"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (changes made manually)
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Target -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase4-target"
+                  >
+                    <div class="feature-box">
+                      <h4 class="govuk-heading-s">
+                        Best Practice: Integrated inspector checkpoints
+                      </h4>
+                      <p class="govuk-body">
+                        By sharing plan-making information in a structured way,
+                        inspectors spend less time reviewing and connecting
+                        information across different documents. They can also
+                        annotate and mark up the source data, which can easily
+                        be fed back into the local authority's system, reducing
+                        the laborious task of matching up modifications with
+                        changes to the plan.
+                      </p>
+
+                      <hr
+                        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+                      />
+                      <h5 class="govuk-heading-s">Real-world impact</h5>
+                      <ul class="govuk-list">
+                        <li class="govuk-!-margin-bottom-4">
+                          <strong
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
+                            >Faster inspections</strong
+                          >
+                          <p class="govuk-body govuk-!-margin-bottom-0">
+                            Inspectors' workflow is supported by showing the
+                            links made during policy-making.
+                          </p>
+                        </li>
+                        <li class="govuk-!-margin-bottom-0">
+                          <strong
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
+                            >Less manual editing</strong
+                          >
+                          <p class="govuk-body govuk-!-margin-bottom-0">
+                            Officers can see modifications against the relevant
+                            policy, making editing and tracking changes less
+                            manual.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 200"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Target architecture: the plan-making tool exchanges structured data in both directions through an API Gateway with the Planning Inspectorate's back-office system."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="75"
+                          width="200"
+                          height="50"
+                          fill="#fff"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="110"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Plan-making tool
+                        </text>
+                        <text
+                          x="110"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (structured plan data)
+                        </text>
+                        <path
+                          d="M 220 100 L 285 100"
+                          fill="none"
+                          stroke="#1d70b8"
+                          stroke-width="2"
+                          marker-start="url(#arrow-blue)"
+                          marker-end="url(#arrow-blue)"
+                        />
+                        <rect
+                          x="295"
+                          y="75"
+                          width="180"
+                          height="50"
+                          fill="#1d70b8"
+                          rx="4"
+                        />
+                        <text
+                          x="385"
+                          y="105"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#fff"
+                        >
+                          API Gateway
+                        </text>
+                        <path
+                          d="M 485 100 L 550 100"
+                          fill="none"
+                          stroke="#1d70b8"
+                          stroke-width="2"
+                          marker-start="url(#arrow-blue)"
+                          marker-end="url(#arrow-blue)"
+                        />
+                        <rect
+                          x="560"
+                          y="75"
+                          width="230"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="675"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Planning Inspectorate
+                        </text>
+                        <text
+                          x="675"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (back-office system)
+                        </text>
+                        <text
+                          x="400"
+                          y="160"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#00703c"
+                        >
+                          Inspector annotations flow back into the plan data
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button"
+                    ><span class="phase-number">5</span> Adoption and
+                    publication</span
+                  >
+                </h3>
+              </div>
+              <div class="govuk-accordion__section-content">
+                <div class="govuk-tabs" data-module="govuk-tabs">
+                  <ul class="govuk-tabs__list">
+                    <li
+                      class="govuk-tabs__list-item govuk-tabs__list-item--selected"
+                    >
+                      <a class="govuk-tabs__tab" href="#phase5-process"
+                        >Business Process</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase5-anti"
+                        >Anti-patterns</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase5-target"
+                        >Target Architecture</a
+                      >
+                    </li>
+                  </ul>
+
+                  <!-- Process -->
+                  <div class="govuk-tabs__panel" id="phase5-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> Following Examination by the
                       Planning Inspectorate, the Local Plan is officially
@@ -1304,7 +2313,7 @@
                   <!-- Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase3-anti"
+                    id="phase5-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -1446,7 +2455,7 @@
                   <!-- Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase3-target"
+                    id="phase5-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -1470,7 +2479,7 @@
                       <ul class="govuk-list">
                         <li class="govuk-!-margin-bottom-4">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             >Service Cohesion</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
@@ -1664,6 +2673,220 @@
                 </div>
               </div>
             </div>
+
+            <!-- Phase 6 -->
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button"
+                    ><span class="phase-number">6</span> Monitoring</span
+                  >
+                </h3>
+              </div>
+              <div class="govuk-accordion__section-content">
+                <div class="govuk-tabs" data-module="govuk-tabs">
+                  <ul class="govuk-tabs__list">
+                    <li
+                      class="govuk-tabs__list-item govuk-tabs__list-item--selected"
+                    >
+                      <a class="govuk-tabs__tab" href="#phase6-process"
+                        >Business Process</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase6-anti"
+                        >Anti-patterns</a
+                      >
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#phase6-target"
+                        >Target Architecture</a
+                      >
+                    </li>
+                  </ul>
+
+                  <!-- Process -->
+                  <div class="govuk-tabs__panel" id="phase6-process">
+                    <p class="govuk-body">
+                      <strong>The process:</strong> A requirement of local plans
+                      is that they include a plan for monitoring the policies
+                      and their impact. Currently this means manually counting
+                      key statistics every year, placing a significant burden on
+                      stretched teams.
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Required LGAM Taxonomy Nodes:</strong>
+                    </p>
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--data"
+                        >Business intelligence and analytics</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Anti-patterns -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase6-anti"
+                  >
+                    <div class="pattern-group">
+                      <span class="govuk-tag lgam-tag--anti"
+                        >Anti-pattern: Manual data collection</span
+                      >
+                      <p class="govuk-body">
+                        An officer is required to manually review planning
+                        applications or carry out physical site surveys to
+                        extract key data points.
+                      </p>
+                    </div>
+
+                    <div class="arch-diagram-container">
+                      <svg
+                        viewBox="0 0 800 200"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Anti-pattern: an officer manually collects monitoring data from applications and site surveys and produces a static data report."
+                        style="
+                          font-family:
+                            &quot;GDS Transport&quot;, Arial, sans-serif;
+                        "
+                      >
+                        <rect
+                          x="10"
+                          y="75"
+                          width="160"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="90"
+                          y="105"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Officer
+                        </text>
+                        <path
+                          d="M 170 100 L 270 100"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="280"
+                          y="75"
+                          width="240"
+                          height="50"
+                          fill="#f3f2f1"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="400"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Manual data collection
+                        </text>
+                        <text
+                          x="400"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (applications and site surveys)
+                        </text>
+                        <path
+                          d="M 520 100 L 600 100"
+                          fill="none"
+                          stroke="#d4351c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <rect
+                          x="610"
+                          y="75"
+                          width="180"
+                          height="50"
+                          fill="#fff"
+                          stroke="#505a5f"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="700"
+                          y="97"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Static data report
+                        </text>
+                        <text
+                          x="700"
+                          y="113"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (annual)
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Target -->
+                  <div
+                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
+                    id="phase6-target"
+                  >
+                    <div class="feature-box">
+                      <h4 class="govuk-heading-s">
+                        Best Practice: Automated and integrated monitoring
+                      </h4>
+                      <p class="govuk-body">
+                        If monitoring is built into the planning application
+                        workflow, live data can be captured automatically
+                        throughout the plan period, reducing manual involvement
+                        and increasing the usefulness of the data collected.
+                      </p>
+
+                      <hr
+                        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+                      />
+                      <h5 class="govuk-heading-s">Real-world impact</h5>
+                      <ul class="govuk-list">
+                        <li class="govuk-!-margin-bottom-0">
+                          <strong
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
+                            >Better data insights</strong
+                          >
+                          <p class="govuk-body govuk-!-margin-bottom-0">
+                            Real-time data with fewer errors gives planners and
+                            the wider ecosystem more confidence in how policies
+                            are performing.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -1719,15 +2942,23 @@
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
-                  <strong>Housing completions</strong>
-                </td>
-                <td class="govuk-table__cell">[Placeholder]</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
                   <strong>Timetable data</strong>
                 </td>
-                <td class="govuk-table__cell">[Placeholder]</td>
+                <td class="govuk-table__cell">
+                  There is a
+                  <a
+                    class="govuk-link"
+                    href="https://www.gov.uk/guidance/creating-a-plan-timetable"
+                    >statutory requirement</a
+                  >
+                  for plan-making autorities to publish their local plan
+                  timetable in a
+                  <a
+                    class="govuk-link"
+                    href="https://www.gov.uk/government/publications/publish-your-plan-data/publish-your-plan-data"
+                    >standardised format</a
+                  >, this must be updated at key points in the process.
+                </td>
               </tr>
             </tbody>
           </table>
@@ -1737,36 +2968,191 @@
           class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
         />
 
-        <section id="platforms">
-          <h2 class="govuk-heading-l">Platforms & tools</h2>
+        <section id="what-makes-planning-policy-different">
+          <h2 class="govuk-heading-l">
+            What makes planning policy technically different
+          </h2>
+
           <p class="govuk-body">
-            Because Planning Policy spans deep analytics and broad public
-            engagement, the tooling usually involves a mix of Enterprise GIS and
-            specialized web platforms.
+            Every council domain has integration points with shared
+            capabilities. Planning policy is architecturally distinctive in
+            several ways that affect how you design those integrations:
           </p>
 
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              <strong>Esri ArcGIS Hub:</strong> Extends traditional spatial
-              analysis into community engagement, allowing councils to build
-              map-centric consultation websites.
-            </li>
-            <li>
-              <strong>Commonplace:</strong> A dedicated, map-based community
-              engagement platform focused on capturing structured,
-              location-specific citizen sentiment.
-            </li>
-            <li>
-              <strong>Citizen Space (Delib):</strong> A widely used government
-              consultation platform for managing statutory consultation
-              responses efficiently.
-            </li>
-            <li>
-              <strong>Cloud Data Warehouses (Snowflake, AWS, Azure):</strong>
-              Used increasingly by data-mature councils to run reproducible
-              spatial models (MCDA) rather than relying on desktop GIS software.
-            </li>
-          </ul>
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              The problem is the process, not the PDF
+            </h3>
+            <p class="govuk-body">
+              Earlier "digital local plans" focused on publishing a more
+              interactive version of the plan document. Research with local
+              planning authorities found the real pain sits in plan-making
+              itself: evidence, policy wording, consultation responses,
+              modifications and maps are held separately in Word, Excel, GIS and
+              the website, and the same information is collated by hand again
+              and again. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                The plan should be built from a single structured source of
+                truth, with policies, evidence, consultation and spatial data
+                held as linked data rather than separate documents.
+              </li>
+              <li>
+                Website pages, consultation drafts and submission documents
+                should be generated from that source, not maintained as parallel
+                copies.
+              </li>
+              <li>
+                A PDF may still be required, for example by inspectors, but it
+                should be an output generated from the data rather than the
+                master record.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              A statutory, multi-year process with fixed gateways
+            </h3>
+            <p class="govuk-body">
+              Under the new plan-making system, a local plan follows a 30-month
+              process with defined stages, gateway assessments and an
+              examination by the Planning Inspectorate (<abbr
+                title="Planning Inspectorate"
+                >PINS</abbr
+              >). The plan timetable and housing requirement must be published
+              as data. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                The plan timetable and its milestones should be structured data,
+                ideally recording which regulation each published date satisfies
+                so that compliance can be checked automatically.
+              </li>
+              <li>
+                Submissions to PINS at each gateway and at examination should
+                move towards automated, auditable data exchange rather than
+                manually numbered, printed and emailed document bundles.
+              </li>
+              <li>
+                Data captured at each stage should follow MHCLG's published
+                planning data standards rather than a local data model.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Version history is a core requirement
+            </h3>
+            <p class="govuk-body">
+              Policy wording changes many times through consultation,
+              examination and modifications. Today this is tracked with tracked
+              changes and multiple copies of the same document. Developers,
+              agents and decision makers need to know which version of a policy
+              applied at a given date, and why it changed. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Each policy should be versioned as data, with the reason for
+                each change recorded, for example a main or minor modification
+                proposed at examination.
+              </li>
+              <li>
+                Differences between versions should be generated automatically
+                rather than produced by hand.
+              </li>
+              <li>
+                The status of every policy document (emerging, submitted,
+                adopted or superseded) should be clear, and people should be
+                able to be notified when a policy that affects them changes.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">
+              Policies only make sense alongside their evidence
+            </h3>
+            <p class="govuk-body">
+              Inspectors, development management officers and consultants all
+              need to understand where a policy came from. Preparing for
+              examination currently means manually reviewing large volumes of
+              evidence and consultation responses for each inspector question.
+              This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Policies need explicit links to the evidence base, consultation
+                responses and the national policy (such as the
+                <abbr title="National Planning Policy Framework">NPPF</abbr>)
+                that informed them.
+              </li>
+              <li>
+                Consultation responses should be structured by theme, policy and
+                respondent so officers can respond consistently and in bulk.
+              </li>
+              <li>
+                Inspectors' questions should be linkable to the relevant
+                policies, evidence and responses, so examination preparation can
+                be partly automated.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">Spatial data is part of the policy</h3>
+            <p class="govuk-body">
+              The policies map, site allocations and constraint layers are a
+              legal part of the plan, not an illustration of it. Statutory
+              consultees rely on spatial data but still receive it manually, and
+              planners often want to start from the map. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                Every policy should have a geospatial representation, even where
+                it applies to the whole plan area.
+              </li>
+              <li>
+                Policy layers should follow MHCLG's guidance on presenting the
+                policies map and be shared as reliable, reusable data.
+              </li>
+              <li>
+                GIS integration needs to work both ways, because modifications
+                can change policy boundaries during examination.
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-box">
+            <h3 class="govuk-heading-s">Part of a wider, changing ecosystem</h3>
+            <p class="govuk-body">
+              Plan-making depends on tools and services outside the policy team:
+              call for sites, digital consultation, PINS submission, and
+              national services being developed by MHCLG. Local policy also sits
+              within a hierarchy of national policy and, outside London, new
+              <abbr title="Spatial Development Strategies">SDSs</abbr>, while
+              local government reorganisation will change which bodies make
+              plans. This means:
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>
+                A plan-making system must interoperate through open APIs with
+                consultation, call for sites, GIS and PINS services rather than
+                replacing them.
+              </li>
+              <li>
+                The data structure should be modular and authority-agnostic so
+                it can absorb regulatory change and scale to other policy
+                documents such as SDSs.
+              </li>
+              <li>
+                Policy hierarchy matters: users need to see local, strategic and
+                national policy that applies to a site together.
+              </li>
+            </ul>
+          </div>
         </section>
 
         <hr
