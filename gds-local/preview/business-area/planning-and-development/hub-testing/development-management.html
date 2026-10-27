@@ -164,7 +164,7 @@
           </li>
           <li class="app-navigation__item">
             <a class="app-navigation__link" href="#the-journey"
-              >The technical lifecycle</a
+              >Business process and user journey</a
             >
           </li>
         </ul>
@@ -302,117 +302,273 @@
           <table class="govuk-table govuk-!-margin-bottom-8">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th
-                  scope="col"
-                  class="govuk-table__header govuk-!-width-one-quarter"
-                >
-                  LGAM Mapping
-                </th>
-                <th
-                  scope="col"
-                  class="govuk-table__header govuk-!-width-one-quarter"
-                >
-                  Context in Planning
-                </th>
-                <th
-                  scope="col"
-                  class="govuk-table__header govuk-!-width-one-quarter"
-                >
-                  Dominant implementation (Example)
-                </th>
-                <th
-                  scope="col"
-                  class="govuk-table__header govuk-!-width-one-quarter"
-                >
-                  Emergent implementation (Example)
+                <th scope="col" class="govuk-table__header">LGAM Layer</th>
+                <th scope="col" class="govuk-table__header">LGAM Element</th>
+                <th scope="col" class="govuk-table__header">
+                  Context in Development Management
                 </th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
-                  <span class="govuk-tag lgam-tag--capability"
-                    >Capabilities</span
-                  >&rarr;
-                  <span class="govuk-tag lgam-tag--capability">Payments</span>
-                </td>
-                <td class="govuk-table__cell">
-                  Processing application fees, community infrastructure levy,
-                  and land charges.
-                </td>
-                <td class="govuk-table__cell">Third-party payment Gateway</td>
-                <td class="govuk-table__cell">GOV.UK pay</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <span class="govuk-tag lgam-tag--capability"
-                    >Capabilities</span
-                  >&rarr;
-                  <span class="govuk-tag lgam-tag--capability">Forms</span>
-                </td>
-                <td class="govuk-table__cell">
-                  Capturing structured data for planning applications, building
-                  control submissions, and prior notifications.
-                </td>
-                <td class="govuk-table__cell">
-                  Planning Portal / Built-in PDF Forms
-                </td>
-                <td class="govuk-table__cell">Rules as code engine</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <span class="govuk-tag lgam-tag--capability"
-                    >Capabilities</span
-                  >&rarr;
-                  <span class="govuk-tag lgam-tag--capability">Workflow</span
-                  ><br /><span class="govuk-body-s" style="color: #505a5f"
-                    >(Case Management)</span
+                  <span class="govuk-tag lgam-tag--channel"
+                    >Public Channels</span
                   >
                 </td>
                 <td class="govuk-table__cell">
-                  Routing applications through validation, public consultation,
-                  officer assessment, and final determination stages.
+                  <span class="govuk-tag lgam-tag--channel">Email</span>
                 </td>
                 <td class="govuk-table__cell">
-                  Monolithic Case Management System
+                  Main channel of communication between officer and applicant,
+                  including requests for clarification, additional information
+                  and replacement documents, as well as delivery of the
+                  determination or decision notice.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--channel"
+                    >Public Channels</span
+                  >
                 </td>
                 <td class="govuk-table__cell">
-                  Service specific case management tool built on open data
+                  <span class="govuk-tag lgam-tag--channel">Letter</span>
+                </td>
+                <td class="govuk-table__cell">
+                  Frequently used to notify neighbours of development and invite
+                  comments.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--channel"
+                    >Public Channels</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--channel">Online</span>
+                </td>
+                <td class="govuk-table__cell">
+                  Provides information on planning services and signposts to
+                  submission services.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--interface"
+                    >Council Interfaces</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--interface">Human</span>
+                </td>
+                <td class="govuk-table__cell">
+                  In-person site visits may occasionally be required.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--interface"
+                    >Council Interfaces</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--interface">Websites</span>
+                </td>
+                <td class="govuk-table__cell">
+                  See Public Channels &gt; Online.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Agentic AI</span>
+                </td>
+                <td class="govuk-table__cell">
+                  Emerging use for automated validation, consultation analysis,
+                  historical document processing and assisted assessment.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Booking</span>
+                </td>
+                <td class="govuk-table__cell">
+                  In-person site visits usually arranged via email.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Email</span>
+                </td>
+                <td class="govuk-table__cell">
+                  See Public Channels &gt; Email.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Forms</span>
+                </td>
+                <td class="govuk-table__cell">
+                  Generally for non-statutory enquiries and submissions rather
+                  than formal planning applications.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Identity</span>
+                </td>
+                <td class="govuk-table__cell">
+                  Enables staff access to planning systems and the public to
+                  register for notifications.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Payments</span>
+                </td>
+                <td class="govuk-table__cell">
+                  Initial submission fees are gathered by third-party services
+                  and reconciled separately, but additional or adjusted fees may
+                  be gathered directly by the council.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability"
+                    >Capabilities</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--capability">Workflow</span>
+                </td>
+                <td class="govuk-table__cell">
+                  Case management systems, with related capabilities shared with
+                  other services within the Business Area, such as Building
+                  Control, and with other Business Areas, such as Licensing.
                 </td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                   <span class="govuk-tag lgam-tag--corporate"
                     >Corporate Areas</span
-                  >&rarr;
-                  <span class="govuk-tag lgam-tag--corporate">Geographical</span
-                  ><br /><span class="govuk-body-s" style="color: #505a5f"
-                    >(GIS / Spatial Analysis)</span
                   >
                 </td>
                 <td class="govuk-table__cell">
-                  Cross-referencing proposed development boundaries against
-                  authoritative spatial constraints.
+                  <span class="govuk-tag lgam-tag--corporate"
+                    >Geographical</span
+                  >
                 </td>
-                <td class="govuk-table__cell">GIS Platform</td>
-                <td class="govuk-table__cell">-</td>
+                <td class="govuk-table__cell">
+                  Significant dependency on GIS data to identify relevant
+                  planning constraints linked to the development site.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--corporate"
+                    >Corporate Areas</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--corporate"
+                    >Legal and compliance</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  Involved in defining planning obligations.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--technology"
+                    >Foundational Technology</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--technology"
+                    >Artificial Intelligence</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  See Capabilities &gt; Agentic AI.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--integration"
+                    >Integration</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--integration"
+                    >API management and gateways</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  Integration between submission portals, case management and
+                  GIS is generally managed by back-office system suppliers, with
+                  limited API access.
+                </td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                   <span class="govuk-tag lgam-tag--data"
                     >Data and Information</span
-                  >&rarr;
-                  <span class="govuk-tag lgam-tag--data"
-                    >Document and records management</span
                   >
                 </td>
                 <td class="govuk-table__cell">
-                  Managing and storing unstructured PDFs, plans, and
-                  applicant-provided evidence.
+                  <span class="govuk-tag lgam-tag--data"
+                    >Business intelligence and analytics</span
+                  >
                 </td>
-                <td class="govuk-table__cell">EDM Module</td>
                 <td class="govuk-table__cell">
-                  Integrated document management with API access
+                  Some reporting is included in case management systems, but
+                  there is increasing use of standalone tools to extract and
+                  analyse data when access is permitted.
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--data"
+                    >Data and Information</span
+                  >
+                </td>
+                <td class="govuk-table__cell">
+                  <span class="govuk-tag lgam-tag--data">Geospatial data</span>
+                </td>
+                <td class="govuk-table__cell">
+                  See Corporate Areas &gt; Geographical.
                 </td>
               </tr>
             </tbody>
@@ -426,7 +582,7 @@
         <section id="the-journey">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-              <h2 class="govuk-heading-l">The technical lifecycle</h2>
+              <h2 class="govuk-heading-l">Business process</h2>
               <p class="govuk-body">
                 This section outlines the business process at each phase of a
                 planning application. Expand each phase to compare the neutral
@@ -472,8 +628,7 @@
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">1</span> Finding the
-                    service</span
+                    ><span class="phase-number">1</span> Submission</span
                   >
                 </h3>
               </div>
@@ -488,11 +643,11 @@
                         >Business Process</a
                       >
                     </li>
-                    <!--li class="govuk-tabs__list-item">
+                    <li class="govuk-tabs__list-item">
                       <a class="govuk-tabs__tab" href="#phase1-anti"
                         >Anti-patterns</a
                       >
-                    </li-->
+                    </li>
                     <li class="govuk-tabs__list-item">
                       <a class="govuk-tabs__tab" href="#phase1-target"
                         >Target Architecture</a
@@ -503,17 +658,23 @@
                   <!-- Phase 1: Process -->
                   <div class="govuk-tabs__panel" id="phase1-process">
                     <p class="govuk-body">
-                      <strong>The process:</strong> The applicant finding out
-                      about the requirements of the service, whether they need
-                      planning permission and what they need to prepare and pay
-                      to be able to get planning permission.
+                      <strong>The process:</strong> The intake of data from
+                      citizens, architects, and planning agents. The council
+                      securely captures the applicant's intent, property
+                      details, supporting documents, and the specific geographic
+                      boundaries of the proposed development.
                     </p>
                     <p class="govuk-body govuk-!-margin-bottom-2">
                       <strong>Required LGAM Taxonomy Nodes:</strong>
                     </p>
                     <div class="pattern-group govuk-!-margin-bottom-4">
-                      <span class="govuk-tag lgam-tag--channel">Online</span>
                       <span class="govuk-tag lgam-tag--capability">Forms</span>
+                      <span class="govuk-tag lgam-tag--capability"
+                        >Identity and access management (IAM)</span
+                      >
+                      <span class="govuk-tag lgam-tag--capability"
+                        >Document and records management</span
+                      >
                     </div>
                   </div>
 
@@ -699,500 +860,6 @@
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
                     id="phase1-target"
-                  >
-                    <div class="feature-box">
-                      <h4 class="govuk-heading-s">
-                        Best Practice: Self-service planning advice
-                      </h4>
-                      <p class="govuk-body">
-                        Modern architectures utilise rules-as-code engines
-                        (e.g., PlanX) instead of static web content. These
-                        systems branch intelligently, helping applicants work
-                        out whether or not they need to submit and what they
-                        will need to provide.
-                      </p>
-
-                      <hr
-                        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
-                      />
-                      <h5 class="govuk-heading-s">Real-world impact</h5>
-                      <ul class="govuk-list">
-                        <li class="govuk-!-margin-bottom-4">
-                          <strong
-                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
-                            style="max-width: unset"
-                            >Channel shift</strong
-                          >
-                          <p class="govuk-body govuk-!-margin-bottom-0">
-                            Better self-service tools enable fewer calls and
-                            emails which need manually responding to, saving
-                            time and money.
-                          </p>
-                        </li>
-                        <li class="govuk-!-margin-bottom-0">
-                          <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
-                            style="max-width: unset"
-                            >Better citizen UX</strong
-                          >
-                          <p class="govuk-body govuk-!-margin-bottom-0">
-                            Applicants can access immediate responses to their
-                            queries at any time of day or night.
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div
-                      class="arch-diagram-container"
-                      aria-label="Target state diagram showing rules engine API branching"
-                    >
-                      <svg
-                        viewBox="0 0 800 240"
-                        width="100%"
-                        height="100%"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style="
-                          font-family:
-                            &quot;GDS Transport&quot;, Arial, sans-serif;
-                        "
-                      >
-                        <!-- Agent -->
-                        <!--rect
-                          x="10"
-                          y="95"
-                          width="100"
-                          height="50"
-                          fill="#f3f2f1"
-                          stroke="#0b0c0c"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="60"
-                          y="120"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Agent
-                        </text>
-                        <text
-                          x="60"
-                          y="135"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#505a5f"
-                        >
-                          (OIDC Identity)
-                        </text>
-
-                        <line
-                          x1="110"
-                          y1="120"
-                          x2="170"
-                          y2="120"
-                          stroke="#0b0c0c"
-                          stroke-width="2"
-                          marker-end="url(#arrow)"
-                        /-->
-
-                        <!-- Rules Engine -->
-                        <rect
-                          x="180"
-                          y="95"
-                          width="160"
-                          height="50"
-                          fill="#fff"
-                          stroke="#00703c"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="260"
-                          y="120"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Rules-as-code
-                        </text>
-                        <text
-                          x="260"
-                          y="135"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#505a5f"
-                        >
-                          Dynamic Frontend
-                        </text>
-
-                        <!-- Branches Up: Geo API -->
-                        <path
-                          d="M 260 95 L 260 40 L 460 40"
-                          fill="none"
-                          stroke="#1d70b8"
-                          stroke-width="2"
-                          stroke-dasharray="4"
-                          marker-end="url(#arrow-blue)"
-                        />
-                        <text
-                          x="360"
-                          y="30"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#1d70b8"
-                        >
-                          Live spatial intersection
-                        </text>
-
-                        <rect
-                          x="470"
-                          y="20"
-                          width="160"
-                          height="40"
-                          fill="#fff"
-                          stroke="#1d70b8"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="550"
-                          y="45"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Geospatial API
-                        </text>
-
-                        <!-- Branches Middle: Workflow -->
-                        <line
-                          x1="340"
-                          y1="120"
-                          x2="460"
-                          y2="120"
-                          stroke="#0b0c0c"
-                          stroke-width="2"
-                          marker-end="url(#arrow)"
-                        />
-                        <!--text
-                          x="400"
-                          y="110"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#505a5f"
-                        >
-                          Structured JSON
-                        </text-->
-
-                        <rect
-                          x="470"
-                          y="100"
-                          width="160"
-                          height="40"
-                          fill="#fff"
-                          stroke="#505a5f"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="550"
-                          y="125"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Submission service
-                        </text>
-
-                        <!-- Branches Down: Payments -->
-                        <!--path
-                          d="M 260 145 L 260 200 L 460 200"
-                          fill="none"
-                          stroke="#1d70b8"
-                          stroke-width="2"
-                          stroke-dasharray="4"
-                          marker-end="url(#arrow-blue)"
-                        />
-                        <text
-                          x="360"
-                          y="190"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#1d70b8"
-                        >
-                          Calculates fee upfront
-                        </text>
-
-                        <rect
-                          x="470"
-                          y="180"
-                          width="160"
-                          height="40"
-                          fill="#fff"
-                          stroke="#1d70b8"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="550"
-                          y="205"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Payment Gateway
-                        </text-->
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Phase 2 -->
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">2</span> Submission</span
-                  >
-                </h3>
-              </div>
-              <div class="govuk-accordion__section-content">
-                <div class="govuk-tabs" data-module="govuk-tabs">
-                  <h2 class="govuk-tabs__title">Phase 2 Architecture</h2>
-                  <ul class="govuk-tabs__list">
-                    <li
-                      class="govuk-tabs__list-item govuk-tabs__list-item--selected"
-                    >
-                      <a class="govuk-tabs__tab" href="#phase2-process"
-                        >Business Process</a
-                      >
-                    </li>
-                    <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase2-anti"
-                        >Anti-patterns</a
-                      >
-                    </li>
-                    <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase2-target"
-                        >Target Architecture</a
-                      >
-                    </li>
-                  </ul>
-
-                  <!-- Phase 2: Process -->
-                  <div class="govuk-tabs__panel" id="phase2-process">
-                    <p class="govuk-body">
-                      <strong>The process:</strong> The intake of data from
-                      citizens, architects, and planning agents. The council
-                      securely captures the applicant's intent, property
-                      details, supporting documents, and the specific geographic
-                      boundaries of the proposed development.
-                    </p>
-                    <p class="govuk-body govuk-!-margin-bottom-2">
-                      <strong>Required LGAM Taxonomy Nodes:</strong>
-                    </p>
-                    <div class="pattern-group govuk-!-margin-bottom-4">
-                      <span class="govuk-tag lgam-tag--capability">Forms</span>
-                      <span class="govuk-tag lgam-tag--capability"
-                        >Identity and access management (IAM)</span
-                      >
-                      <span class="govuk-tag lgam-tag--capability"
-                        >Document and records management</span
-                      >
-                    </div>
-                  </div>
-
-                  <!-- Phase 2: Anti-patterns -->
-                  <div
-                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase2-anti"
-                  >
-                    <div class="pattern-group">
-                      <span class="govuk-tag lgam-tag--anti"
-                        >Anti-pattern: Generic E-Forms to PDF</span
-                      >
-                      <p class="govuk-body">
-                        Using generic council web forms that capture free-text
-                        input and immediately flatten the data into an
-                        unstructured PDF. This strips the submission of its
-                        machine-readable data on day one.
-                      </p>
-                    </div>
-                    <div class="pattern-group">
-                      <span class="govuk-tag lgam-tag--anti"
-                        >Anti-pattern: Free-text address matching</span
-                      >
-                      <p class="govuk-body">
-                        Allowing applicants to manually type their address
-                        rather than forcing a UPRN lookup against the corporate
-                        gazetteer, resulting in failed spatial linkages
-                        downstream.
-                      </p>
-                    </div>
-
-                    <div
-                      class="arch-diagram-container"
-                      aria-label="Baseline process flow diagram showing generic portal ingestion"
-                    >
-                      <svg
-                        viewBox="0 0 800 200"
-                        width="100%"
-                        height="100%"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style="
-                          font-family:
-                            &quot;GDS Transport&quot;, Arial, sans-serif;
-                        "
-                      >
-                        <!-- Applicant -->
-                        <rect
-                          x="10"
-                          y="75"
-                          width="120"
-                          height="50"
-                          fill="#f3f2f1"
-                          stroke="#0b0c0c"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="70"
-                          y="100"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Applicant
-                        </text>
-
-                        <line
-                          x1="130"
-                          y1="100"
-                          x2="190"
-                          y2="100"
-                          stroke="#0b0c0c"
-                          stroke-width="2"
-                          marker-end="url(#arrow)"
-                        />
-
-                        <!-- Portal -->
-                        <rect
-                          x="200"
-                          y="75"
-                          width="160"
-                          height="50"
-                          fill="#fff"
-                          stroke="#d4351c"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="280"
-                          y="100"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Generic E-Form
-                        </text>
-
-                        <!-- Branches -->
-                        <!-- Top Branch: PDF Generation -->
-                        <path
-                          d="M 360 100 L 410 100 L 410 45 L 480 45"
-                          fill="none"
-                          stroke="#d4351c"
-                          stroke-width="2"
-                          marker-end="url(#arrow)"
-                        />
-                        <text
-                          x="440"
-                          y="35"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#d4351c"
-                        >
-                          Generates Flat PDF
-                        </text>
-
-                        <rect
-                          x="500"
-                          y="20"
-                          width="160"
-                          height="50"
-                          fill="#fff"
-                          stroke="#505a5f"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="580"
-                          y="45"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Doc Repository
-                        </text>
-
-                        <!-- Bottom Branch: Basic Metadata -->
-                        <path
-                          d="M 360 100 L 410 100 L 410 155 L 480 155"
-                          fill="none"
-                          stroke="#0b0c0c"
-                          stroke-width="2"
-                          marker-end="url(#arrow)"
-                        />
-                        <text
-                          x="440"
-                          y="175"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#505a5f"
-                        >
-                          Basic Metadata
-                        </text>
-
-                        <rect
-                          x="500"
-                          y="130"
-                          width="160"
-                          height="50"
-                          fill="#fff"
-                          stroke="#505a5f"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="580"
-                          y="155"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Workflow DB
-                        </text>
-                      </svg>
-                    </div>
-                  </div>
-
-                  <!-- Phase 2: Target -->
-                  <div
-                    class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase2-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -1458,41 +1125,41 @@
               </div>
             </div>
 
-            <!-- Phase 3 -->
+            <!-- Phase 2 -->
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">3</span> Validation &
+                    ><span class="phase-number">2</span> Validation &
                     Triage</span
                   >
                 </h3>
               </div>
               <div class="govuk-accordion__section-content">
                 <div class="govuk-tabs" data-module="govuk-tabs">
-                  <h2 class="govuk-tabs__title">Phase 3 Architecture</h2>
+                  <h2 class="govuk-tabs__title">Phase 2 Architecture</h2>
                   <ul class="govuk-tabs__list">
                     <li
                       class="govuk-tabs__list-item govuk-tabs__list-item--selected"
                     >
-                      <a class="govuk-tabs__tab" href="#phase3-process"
+                      <a class="govuk-tabs__tab" href="#phase2-process"
                         >Business Process</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase3-anti"
+                      <a class="govuk-tabs__tab" href="#phase2-anti"
                         >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase3-target"
+                      <a class="govuk-tabs__tab" href="#phase2-target"
                         >Target Architecture</a
                       >
                     </li>
                   </ul>
 
-                  <!-- Phase 3: Process -->
-                  <div class="govuk-tabs__panel" id="phase3-process">
+                  <!-- Phase 2: Process -->
+                  <div class="govuk-tabs__panel" id="phase2-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> Ensuring the submission is
                       legally complete, geographically sound, and financially
@@ -1517,10 +1184,10 @@
                     </div>
                   </div>
 
-                  <!-- Phase 3: Anti-patterns -->
+                  <!-- Phase 2: Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase3-anti"
+                    id="phase2-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -1700,10 +1367,10 @@
                     </div>
                   </div>
 
-                  <!-- Phase 3: Target -->
+                  <!-- Phase 2: Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase3-target"
+                    id="phase2-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -2039,41 +1706,41 @@
               </div>
             </div>
 
-            <!-- Phase 4 -->
+            <!-- Phase 3 -->
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">4</span> Consultation &
+                    ><span class="phase-number">3</span> Consultation &
                     Assessment</span
                   >
                 </h3>
               </div>
               <div class="govuk-accordion__section-content">
                 <div class="govuk-tabs" data-module="govuk-tabs">
-                  <h2 class="govuk-tabs__title">Phase 4 Architecture</h2>
+                  <h2 class="govuk-tabs__title">Phase 3 Architecture</h2>
                   <ul class="govuk-tabs__list">
                     <li
                       class="govuk-tabs__list-item govuk-tabs__list-item--selected"
                     >
-                      <a class="govuk-tabs__tab" href="#phase4-process"
+                      <a class="govuk-tabs__tab" href="#phase3-process"
                         >Business Process</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase4-anti"
+                      <a class="govuk-tabs__tab" href="#phase3-anti"
                         >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase4-target"
+                      <a class="govuk-tabs__tab" href="#phase3-target"
                         >Target Architecture</a
                       >
                     </li>
                   </ul>
 
-                  <!-- Phase 4: Process -->
-                  <div class="govuk-tabs__panel" id="phase4-process">
+                  <!-- Phase 3: Process -->
+                  <div class="govuk-tabs__panel" id="phase3-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> The core officer workflow.
                       Managing the statutory public comment period, processing
@@ -2097,10 +1764,10 @@
                     </div>
                   </div>
 
-                  <!-- Phase 4: Anti-patterns -->
+                  <!-- Phase 3: Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase4-anti"
+                    id="phase3-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -2304,10 +1971,10 @@
                     </div>
                   </div>
 
-                  <!-- Phase 4: Target -->
+                  <!-- Phase 3: Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase4-target"
+                    id="phase3-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -2637,41 +2304,41 @@
               </div>
             </div>
 
-            <!-- Phase 5 -->
+            <!-- Phase 4 -->
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h3 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button"
-                    ><span class="phase-number">5</span> Determination &
+                    ><span class="phase-number">4</span> Determination &
                     Post-Decision</span
                   >
                 </h3>
               </div>
               <div class="govuk-accordion__section-content">
                 <div class="govuk-tabs" data-module="govuk-tabs">
-                  <h2 class="govuk-tabs__title">Phase 5 Architecture</h2>
+                  <h2 class="govuk-tabs__title">Phase 4 Architecture</h2>
                   <ul class="govuk-tabs__list">
                     <li
                       class="govuk-tabs__list-item govuk-tabs__list-item--selected"
                     >
-                      <a class="govuk-tabs__tab" href="#phase5-process"
+                      <a class="govuk-tabs__tab" href="#phase4-process"
                         >Business Process</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase5-anti"
+                      <a class="govuk-tabs__tab" href="#phase4-anti"
                         >Anti-patterns</a
                       >
                     </li>
                     <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#phase5-target"
+                      <a class="govuk-tabs__tab" href="#phase4-target"
                         >Target Architecture</a
                       >
                     </li>
                   </ul>
 
-                  <!-- Phase 5: Process -->
-                  <div class="govuk-tabs__panel" id="phase5-process">
+                  <!-- Phase 4: Process -->
+                  <div class="govuk-tabs__panel" id="phase4-process">
                     <p class="govuk-body">
                       <strong>The process:</strong> Issuing the final legal
                       decision, recording conditions, preparing bundles for
@@ -2691,10 +2358,10 @@
                     </div>
                   </div>
 
-                  <!-- Phase 5: Anti-patterns -->
+                  <!-- Phase 4: Anti-patterns -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase5-anti"
+                    id="phase4-anti"
                   >
                     <div class="pattern-group">
                       <span class="govuk-tag lgam-tag--anti"
@@ -2883,10 +2550,10 @@
                     </div>
                   </div>
 
-                  <!-- Phase 5: Target -->
+                  <!-- Phase 4: Target -->
                   <div
                     class="govuk-tabs__panel govuk-tabs__panel--hidden"
-                    id="phase5-target"
+                    id="phase4-target"
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
@@ -4074,52 +3741,6 @@
                 data extraction complexity.
               </li>
             </ul>
-          </div>
-        </section>
-
-        <hr
-          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
-        />
-
-        <section id="procurement">
-          <h2 class="govuk-heading-l">Market intelligence & pre-procurement</h2>
-          <p class="govuk-body">
-            Reviewing live public sector tender opportunities provides valuable
-            context when drafting business cases. Architects and Service Owners
-            can use this data to benchmark estimated contract values, identify
-            active suppliers, and discover peer councils to contact for example
-            tender specifications.
-          </p>
-
-          <div class="govuk-inset-text">
-            <strong>Data Source:</strong> Live feed powered by the
-            <a
-              class="govuk-link"
-              href="https://github.com/chrisns/uk-tenders-mcp"
-              >UK Tenders MCP integration</a
-            >, filtering for
-            <code
-              >"planning system OR development control OR building
-              control"</code
-            >.
-          </div>
-
-          <div
-            id="tenders-container"
-            class="govuk-!-margin-top-6 govuk-!-margin-bottom-8"
-            data-query="planning system OR development control OR building control"
-            data-limit="4"
-          >
-            <p class="govuk-body" id="tenders-loading">
-              <span
-                style="
-                  display: inline-block;
-                  animation: spin 1s linear infinite;
-                "
-                >&#x23F3;</span
-              >
-              Connecting to MCP tender feed...
-            </p>
           </div>
         </section>
 
