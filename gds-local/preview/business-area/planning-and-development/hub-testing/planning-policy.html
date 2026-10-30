@@ -2897,71 +2897,14 @@
         <section id="target-data">
           <h2 class="govuk-heading-l">Target data models</h2>
           <p class="govuk-body">
-            Planning Policy is the primary generator of spatial rules. These
-            outputs must precisely align with
-            <a
-              class="govuk-link"
-              href="https://www.planning.data.gov.uk/dataset/"
-              >MHCLG national schemas</a
-            >
-            so they can be universally understood by the market.
+            When procuring or configuring systems for Planning Policy, the architecture
+            must align with the national data schemas maintained by MHCLG on
+            <a href="https://planning.data.gov.uk/" class="govuk-link"
+              >planning.data.gov.uk</a
+            >. Treating these schemas as your target data model ensures
+            automated interoperability with central government and
+            neighbouring authorities.
           </p>
-
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Dataset Schema</th>
-                <th scope="col" class="govuk-table__header">
-                  Architectural Purpose
-                </th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><strong>Local plans</strong></td>
-                <td class="govuk-table__cell">
-                  The overarching schema for the spatial development strategy.
-                  It must be published as structured data, not just text,
-                  defining exact geographic boundaries.
-                  <a
-                    class="govuk-link"
-                    href="https://digital-land.github.io/specification/dataset/local-plan/"
-                    >View the dataset definition.</a
-                  >
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong>Brownfield land</strong>
-                </td>
-                <td class="govuk-table__cell">
-                  Statutory register of previously developed land. Maintaining
-                  this as a live, API-accessible schema rather than an annual
-                  CSV export ensures continuous compliance.
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong>Timetable data</strong>
-                </td>
-                <td class="govuk-table__cell">
-                  There is a
-                  <a
-                    class="govuk-link"
-                    href="https://www.gov.uk/guidance/creating-a-plan-timetable"
-                    >statutory requirement</a
-                  >
-                  for plan-making autorities to publish their local plan
-                  timetable in a
-                  <a
-                    class="govuk-link"
-                    href="https://www.gov.uk/government/publications/publish-your-plan-data/publish-your-plan-data"
-                    >standardised format</a
-                  >, this must be updated at key points in the process.
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </section>
 
         <hr
