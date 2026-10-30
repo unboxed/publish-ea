@@ -899,7 +899,7 @@
                         </li>
                         <li class="govuk-!-margin-bottom-0">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             style="max-width: unset"
                             >Better citizen UX</strong
                           >
@@ -1374,27 +1374,22 @@
                   >
                     <div class="feature-box">
                       <h4 class="govuk-heading-s">
-                        Best Practice: Machine Learning extraction
+                        Best Practice: Validate at submission
                       </h4>
                       <p class="govuk-body">
                         Validation is traditionally a major bottleneck caused by
-                        unstructured data. To reduce manual data entry from
-                        legacy formats, councils are introducing computer vision
-                        and LLMs.
+                        the need for councils to ingest and verify unstructured
+                        data submitted by applicants.
                       </p>
 
                       <p class="govuk-body">
-                        These models parse inbound PDFs, isolate the redline
-                        boundary pixels, convert them into structured GeoJSON,
-                        and extract form intent into standard schema variables.
-                      </p>
-                      <p class="govuk-body">
-                        When working with structured data submissions, both
-                        deterministic approaches and LLMs can support validation
-                        can reduce the manual processing and increase processing
-                        times. Moving these as close to the applicant as
-                        possible (for example, integrating in submission tools)
-                        can resolve issues before receipt to the LPA.
+                        To reduce the workload on the planning team and give
+                        applicants a faster, better experience, as much
+                        validation as practicable should happen at the point of
+                        submission. Capturing structured data from the applicant
+                        and giving them the opportunity to correct any errors at
+                        the point of submission removes unnecessary waiting and
+                        work from the process.
                       </p>
 
                       <hr
@@ -1409,22 +1404,21 @@
                             >Operational efficiency</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
-                            Drastically reduces manual transcription and
-                            redrawing time, clearing validation backlogs faster
-                            and lowering processing costs.
+                            Reduces the time spent checking and corresponding
+                            with applicants to get applications ready for
+                            assessment.
                           </p>
                         </li>
                         <li class="govuk-!-margin-bottom-0">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             style="max-width: unset"
-                            >Resource allocation</strong
+                            >Better applicant experience</strong
                           >
                           <p class="govuk-body govuk-!-margin-bottom-0">
-                            Frees highly-skilled validation officers from
-                            administrative data-entry, allowing them to focus
-                            entirely on assessing complex edge-cases and legal
-                            compliance.
+                            Gives applicants greater confidence in timelines for
+                            their application and supports them to get things
+                            right first time.
                           </p>
                         </li>
                       </ul>
@@ -1432,13 +1426,15 @@
 
                     <div
                       class="arch-diagram-container"
-                      aria-label="Data flow diagram showing a PDF being processed by Machine Learning into structured data"
+                      aria-label="Data flow diagram showing an application validated at the point of submission before it reaches case management"
                     >
                       <svg
-                        viewBox="0 0 800 240"
+                        viewBox="0 0 800 200"
                         width="100%"
                         height="100%"
                         xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Target architecture: the applicant submits through a submission service that captures structured data. Automated validation checks the submission straight away. Errors are returned to the applicant to correct at the point of submission, and only valid applications pass to case management, ready for assessment."
                         style="
                           font-family:
                             &quot;GDS Transport&quot;, Arial, sans-serif;
@@ -1446,185 +1442,125 @@
                       >
                         <rect
                           x="10"
-                          y="10"
-                          width="160"
-                          height="220"
-                          fill="#f8f8f8"
-                          stroke="#b1b4b6"
-                          stroke-dasharray="4"
-                          rx="4"
-                        />
-                        <text
-                          x="90"
-                          y="30"
-                          font-size="12"
-                          font-weight="bold"
-                          fill="#505a5f"
-                          text-anchor="middle"
-                        >
-                          STORAGE LAYER
-                        </text>
-
-                        <rect
-                          x="230"
-                          y="10"
-                          width="300"
-                          height="220"
+                          y="60"
+                          width="100"
+                          height="50"
                           fill="#f3f2f1"
-                          stroke="#1d70b8"
-                          stroke-dasharray="4"
-                          rx="4"
-                        />
-                        <text
-                          x="380"
-                          y="30"
-                          font-size="12"
-                          font-weight="bold"
-                          fill="#1d70b8"
-                          text-anchor="middle"
-                        >
-                          AI ENABLEMENT
-                        </text>
-
-                        <rect
-                          x="590"
-                          y="10"
-                          width="200"
-                          height="220"
-                          fill="#f8f8f8"
-                          stroke="#b1b4b6"
-                          stroke-dasharray="4"
-                          rx="4"
-                        />
-                        <text
-                          x="690"
-                          y="30"
-                          font-size="12"
-                          font-weight="bold"
-                          fill="#505a5f"
-                          text-anchor="middle"
-                        >
-                          STRUCTURED SYSTEMS
-                        </text>
-
-                        <!-- Storage Node -->
-                        <rect
-                          x="30"
-                          y="90"
-                          width="120"
-                          height="60"
-                          fill="#fff"
                           stroke="#0b0c0c"
                           stroke-width="2"
                           rx="4"
                         />
                         <text
-                          x="90"
-                          y="115"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Unstructured
-                        </text>
-                        <text
-                          x="90"
-                          y="135"
-                          font-size="12"
-                          text-anchor="middle"
-                          fill="#505a5f"
-                        >
-                          Scanned PDF
-                        </text>
-
-                        <!-- AI Nodes -->
-                        <rect
-                          x="260"
-                          y="50"
-                          width="240"
-                          height="50"
-                          fill="#fff"
-                          stroke="#1d70b8"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="380"
-                          y="75"
-                          font-size="14"
-                          font-weight="bold"
-                          text-anchor="middle"
-                          fill="#0b0c0c"
-                        >
-                          Computer Vision (SAM)
-                        </text>
-                        <text
-                          x="380"
+                          x="60"
                           y="90"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#505a5f"
-                        >
-                          Isolates site boundary pixels
-                        </text>
-
-                        <rect
-                          x="260"
-                          y="150"
-                          width="240"
-                          height="50"
-                          fill="#fff"
-                          stroke="#1d70b8"
-                          stroke-width="2"
-                          rx="4"
-                        />
-                        <text
-                          x="380"
-                          y="175"
                           font-size="14"
                           font-weight="bold"
                           text-anchor="middle"
                           fill="#0b0c0c"
                         >
-                          Large Language Model (LLM)
+                          Applicant
                         </text>
-                        <text
-                          x="380"
-                          y="190"
-                          font-size="11"
-                          text-anchor="middle"
-                          fill="#505a5f"
-                        >
-                          Extracts dates, intent
-                        </text>
-
-                        <!-- System Nodes -->
+                        <path
+                          d="M 110 85 L 145 85"
+                          fill="none"
+                          stroke="#0b0c0c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
                         <rect
-                          x="620"
-                          y="50"
-                          width="140"
+                          x="155"
+                          y="60"
+                          width="180"
                           height="50"
                           fill="#fff"
-                          stroke="#505a5f"
+                          stroke="#00703c"
                           stroke-width="2"
                           rx="4"
                         />
                         <text
-                          x="690"
+                          x="245"
+                          y="82"
+                          font-size="14"
+                          font-weight="bold"
+                          text-anchor="middle"
+                          fill="#0b0c0c"
+                        >
+                          Submission service
+                        </text>
+                        <text
+                          x="245"
+                          y="98"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (structured data capture)
+                        </text>
+                        <path
+                          d="M 335 85 L 385 85"
+                          fill="none"
+                          stroke="#1d70b8"
+                          stroke-width="2"
+                          marker-end="url(#arrow-blue)"
+                        />
+                        <text
+                          x="360"
                           y="75"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#1d70b8"
+                        >
+                          Submit
+                        </text>
+                        <rect
+                          x="395"
+                          y="60"
+                          width="190"
+                          height="50"
+                          fill="#fff"
+                          stroke="#1d70b8"
+                          stroke-width="2"
+                          rx="4"
+                        />
+                        <text
+                          x="490"
+                          y="82"
                           font-size="14"
                           font-weight="bold"
                           text-anchor="middle"
                           fill="#0b0c0c"
                         >
-                          Geospatial data
+                          Automated validation
                         </text>
-
+                        <text
+                          x="490"
+                          y="98"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (rules, constraints, fees)
+                        </text>
+                        <path
+                          d="M 585 85 L 625 85"
+                          fill="none"
+                          stroke="#00703c"
+                          stroke-width="2"
+                          marker-end="url(#arrow)"
+                        />
+                        <text
+                          x="605"
+                          y="75"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#00703c"
+                        >
+                          Valid
+                        </text>
                         <rect
-                          x="620"
-                          y="150"
-                          width="140"
+                          x="635"
+                          y="60"
+                          width="155"
                           height="50"
                           fill="#fff"
                           stroke="#505a5f"
@@ -1632,72 +1568,40 @@
                           rx="4"
                         />
                         <text
-                          x="690"
-                          y="175"
+                          x="712"
+                          y="82"
                           font-size="14"
                           font-weight="bold"
                           text-anchor="middle"
                           fill="#0b0c0c"
                         >
-                          Workflow
+                          Case management
                         </text>
-
-                        <!-- Arrows -->
-                        <line
-                          x1="150"
-                          y1="100"
-                          x2="255"
-                          y2="75"
-                          stroke="#505a5f"
+                        <text
+                          x="712"
+                          y="98"
+                          font-size="11"
+                          text-anchor="middle"
+                          fill="#505a5f"
+                        >
+                          (ready to assess)
+                        </text>
+                        <path
+                          d="M 490 110 L 490 160 L 245 160 L 245 120"
+                          fill="none"
+                          stroke="#00703c"
                           stroke-width="2"
+                          stroke-dasharray="4"
                           marker-end="url(#arrow)"
                         />
-                        <line
-                          x1="150"
-                          y1="130"
-                          x2="255"
-                          y2="165"
-                          stroke="#505a5f"
-                          stroke-width="2"
-                          marker-end="url(#arrow)"
-                        />
-
-                        <line
-                          x1="500"
-                          y1="75"
-                          x2="615"
-                          y2="75"
-                          stroke="#1d70b8"
-                          stroke-width="2"
-                          marker-end="url(#arrow-blue)"
-                        />
                         <text
-                          x="560"
-                          y="65"
+                          x="368"
+                          y="180"
                           font-size="11"
-                          fill="#1d70b8"
                           text-anchor="middle"
+                          fill="#00703c"
                         >
-                          GeoJSON
-                        </text>
-
-                        <line
-                          x1="500"
-                          y1="175"
-                          x2="615"
-                          y2="175"
-                          stroke="#1d70b8"
-                          stroke-width="2"
-                          marker-end="url(#arrow-blue)"
-                        />
-                        <text
-                          x="560"
-                          y="165"
-                          font-size="11"
-                          fill="#1d70b8"
-                          text-anchor="middle"
-                        >
-                          JSON Metadata
+                          Errors returned for the applicant to correct at submission
                         </text>
                       </svg>
                     </div>
@@ -2005,7 +1909,7 @@
                       <ul class="govuk-list">
                         <li class="govuk-!-margin-bottom-4">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             style="max-width: unset"
                             >System resilience</strong
                           >
@@ -2594,7 +2498,7 @@
                         </li>
                         <li class="govuk-!-margin-bottom-0">
                           <strong
-                            class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2"
                             style="max-width: unset"
                             >Data transparency</strong
                           >
@@ -2832,60 +2736,14 @@
         <section id="target-data">
           <h2 class="govuk-heading-l">Target data models</h2>
           <p class="govuk-body">
-            When procuring or configuring systems for Development Management,
-            the architecture must align with the national data schemas
-            maintained by MHCLG on
+            When procuring or configuring systems for Development Management, the architecture
+            must align with the national data schemas maintained by MHCLG on
             <a href="https://planning.data.gov.uk/" class="govuk-link"
               >planning.data.gov.uk</a
             >. Treating these schemas as your target data model ensures
-            automated interoperability with central government and neighboring
-            authorities.
+            automated interoperability with central government and
+            neighbouring authorities.
           </p>
-
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Dataset Schema</th>
-                <th scope="col" class="govuk-table__header">
-                  Architectural Purpose
-                </th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong>Planning applications</strong>
-                </td>
-                <td class="govuk-table__cell">
-                  The core transactional record. Target architectures must
-                  natively emit changes to application status (e.g.,
-                  'Registered', 'Determined') using this exact schema via an
-                  Event Broker.
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong>Conservation areas / Tree preservation orders</strong>
-                </td>
-                <td class="govuk-table__cell">
-                  Spatial constraints. Instead of copying these as static
-                  shapefiles, the rules-engine frontend should query these
-                  schemas via API to dynamically determine validation
-                  requirements.
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong>Developer contributions (Section 106)</strong>
-                </td>
-                <td class="govuk-table__cell">
-                  Financial obligations linked to planning permissions. Requires
-                  integration between the Workflow DB and the council's
-                  Financial capabilities using this structured data model.
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </section>
 
         <hr class="govuk-section-break govuk-section-break--xl" />
