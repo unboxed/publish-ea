@@ -45,6 +45,29 @@
         margin: 30px 0;
         overflow-x: auto;
       }
+
+      /* On-page contents list (GOV.UK contents list pattern) */
+      .app-contents-list {
+        margin-bottom: 40px;
+      }
+      .app-contents-list__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      .app-contents-list__list-item {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 25px;
+      }
+      .app-contents-list__list-item::before {
+        content: "\2014";
+        content: "\2014" / "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        overflow: hidden;
+      }
     </style>
   </head>
 
@@ -149,13 +172,15 @@
             <a class="app-navigation__link" href="#about">About this journey</a>
           </li>
           <li class="app-navigation__item">
-            <a class="app-navigation__link" href="#lgam-stack"
-              >The LGAM technology stack</a
+            <a class="app-navigation__link" href="#the-journey"
+              >Business process and user journey</a
             >
           </li>
           <li class="app-navigation__item">
-            <a class="app-navigation__link" href="#the-journey"
-              >Business process and user journey</a
+            <a
+              class="app-navigation__link"
+              href="#what-makes-planning-policy-different"
+              >What makes planning policy different</a
             >
           </li>
           <li class="app-navigation__item">
@@ -164,10 +189,8 @@
             >
           </li>
           <li class="app-navigation__item">
-            <a
-              class="app-navigation__link"
-              href="#what-makes-planning-policy-different"
-              >What makes planning policy different</a
+            <a class="app-navigation__link" href="#lgam-stack"
+              >The LGAM technology stack</a
             >
           </li>
         </ul>
@@ -273,8 +296,39 @@
         >
         <h1 class="govuk-heading-xl">Planning Policy</h1>
 
+        <nav class="app-contents-list" aria-labelledby="contents-list-heading">
+          <h2
+            class="govuk-heading-s govuk-!-margin-bottom-3"
+            id="contents-list-heading"
+          >
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li class="app-contents-list__list-item govuk-body">
+              <a class="govuk-link" href="#the-journey">Business process</a>
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a
+                class="govuk-link"
+                href="#what-makes-planning-policy-different"
+                >What makes planning policy technically different</a
+              >
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a class="govuk-link" href="#target-data">Target data models</a>
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a
+                class="govuk-link"
+                href="#lgam-stack"
+                >The LGAM technology stack</a
+              >
+            </li>
+          </ol>
+        </nav>
+
         <section id="about">
-          <p class="govuk-body govuk-!-font-size-24">
+          <p class="govuk-body">
             The technical architecture required to gather spatial evidence,
             engage citizens at scale, and formulate the statutory Local Plan.
           </p>
@@ -295,743 +349,6 @@
             >
             webpages.
           </p>
-        </section>
-
-        <hr
-          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
-        />
-
-        <section id="lgam-stack">
-          <h2 class="govuk-heading-l">The LGAM technology stack</h2>
-          <p class="govuk-body">
-            Delivering a Local Plan requires orchestrating analytical and
-            engagement capabilities.
-          </p>
-
-          <div
-            class="govuk-accordion govuk-!-margin-bottom-8"
-            data-module="govuk-accordion"
-            id="accordion-lgam-stack"
-          >
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-1"
-                  >
-                    Public Channels
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-1"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >In person</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Public engagement events as part of consultations.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Phone</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Public enquiries about the local plan.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Email</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Public enquiries about the local plan.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Letter</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Notifying people about the proposed plan consultation.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Online</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Notices, call for sites, publication of documents and
-                        every plan consultation.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Social media</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Promoting plan consultations to reach more people.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Third-party channels</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Political engagement with the plan-making process and
-                        key issues.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Video</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Meetings with prescribed bodies and virtual examination
-                        hearings.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-2"
-                  >
-                    Council Interfaces
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-2"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >Human</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Officers supporting neighbourhood forums and answering
-                        plan enquiries.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >Websites</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Notices, the Gateway 1 summary, consultations, the
-                        examination library, the adopted plan and monitoring
-                        reports.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-3"
-                  >
-                    Capabilities
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-3"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Booking</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Scheduling examination hearings.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Email</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Engaging prescribed bodies, neighbourhood forums and
-                        giving policy advice to DM.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Forms</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Call for sites process and consultation submissions.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Workflow</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Workflow is managed via bespoke project management.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-4"
-                  >
-                    Business Areas
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-4"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--business-area"
-                          >Democratic services</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Plan progress review and adoption at full council and
-                        committee meetings.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--business-area"
-                          >Planning and development</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Policy team consulted by DM, an internal dependency
-                        within the business area.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-5"
-                  >
-                    Corporate Areas
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-5"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Business planning and performance</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Gateway progression, meeting 30 month timelines,
-                        monitoring reports and plan review.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Communications and PR</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Publicising the notice to commence and plan
-                        consultations.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Corporate governance and risk</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Constitutional process for adopting the plan.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Financial</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Funding evidence studies.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Geographical</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Call-for-sites mapping, site assessment, the policies
-                        map and area-based land charges.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Legal and compliance</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Redacting consultation responses, advising on compliance
-                        with regulations and defending legal challenges.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Procurement (B2B)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Commissioning evidence studies and environmental
-                        assessments from consultants.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-6"
-                  >
-                    Foundational Technology
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-6"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Conversational AI</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Chatbot for local plan enquiries.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Generative AI</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Summarising large volumes of representations and
-                        drafting policy.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Unified communications</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Meetings with neighbouring councils and prescribed
-                        bodies.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Productivity</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Shared workspace for drafting the plan, policies and
-                        supplementary plans, especially when working on joint
-                        local plans across organisation boundaries.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Application portfolio</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Recording the policy, consultation and plan-data
-                        systems.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Compute, storage, and network services</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Hosting the policy and consultation systems.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-7"
-                  >
-                    Integration
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-7"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >Data integration and pipelines (ETL/ELT)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Publishing timetable, plan, policies map and register
-                        datasets; pulling in completions data.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >File transfer management</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Sending gateway and examination submissions to PINS.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >Integration governance and tooling</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Integration standards for the policy and consultation
-                        systems.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >Partner (B2B) integration</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        PINS gateways and examination, and the HMLR register for
-                        area-based charges.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-8"
-                  >
-                    Security
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-8"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--security"
-                          >Application and data security</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Protecting consultation and personal data.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--security"
-                          >Security operations and monitoring (SOC)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Security monitoring of the policy and consultation
-                        systems.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-9"
-                  >
-                    Data and Information
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-9"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Planning Policy
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Business intelligence and analytics</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Site assessment, land supply, the monitoring report, the
-                        IFS and plan review.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Data catalogue &amp; metadata management</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Metadata for plan and timetable datasets.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Data governance and quality</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Data standards for the plan timetable, and records
-                        retention.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Data science and predictive analytics</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Site assessment and housing land supply forecasting.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Data storage and warehousing</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Brownfield land and self-build registers.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Document and records management</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Evidence base, representations, gateway and examination
-                        documents, and the plan itself.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Enterprise search and data indexing</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Searching and theming representations.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Geospatial data</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Call for sites, site assessment, the policies map,
-                        supplementary plans, registers and area-based charges.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
         </section>
 
         <hr
@@ -3425,23 +2742,6 @@
           class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
         />
 
-        <section id="target-data">
-          <h2 class="govuk-heading-l">Target data models</h2>
-          <p class="govuk-body">
-            When procuring or configuring systems for Planning Policy, the architecture
-            must align with the national data schemas maintained by MHCLG on
-            <a href="https://planning.data.gov.uk/" class="govuk-link"
-              >planning.data.gov.uk</a
-            >. Treating these schemas as your target data model ensures
-            automated interoperability with central government and
-            neighbouring authorities.
-          </p>
-        </section>
-
-        <hr
-          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
-        />
-
         <section id="what-makes-planning-policy-different">
           <h2 class="govuk-heading-l">
             What makes planning policy technically different
@@ -3626,6 +2926,760 @@
                 national policy that applies to a site together.
               </li>
             </ul>
+          </div>
+        </section>
+
+        <hr
+          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+        />
+
+        <section id="target-data">
+          <h2 class="govuk-heading-l">Target data models</h2>
+          <p class="govuk-body">
+            When procuring or configuring systems for Planning Policy, the architecture
+            must align with the national data schemas maintained by MHCLG on
+            <a href="https://planning.data.gov.uk/" class="govuk-link"
+              >planning.data.gov.uk</a
+            >. Treating these schemas as your target data model ensures
+            automated interoperability with central government and
+            neighbouring authorities.
+          </p>
+        </section>
+
+        <hr
+          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+        />
+
+        <section id="lgam-stack">
+          <h2 class="govuk-heading-l">The LGAM technology stack</h2>
+          <p class="govuk-body">
+            Delivering a Local Plan requires orchestrating analytical and
+            engagement capabilities.
+          </p>
+
+          <div
+            class="govuk-accordion govuk-!-margin-bottom-8"
+            data-module="govuk-accordion"
+            id="accordion-lgam-stack"
+          >
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-1"
+                  >
+                    Public Channels
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-1"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >In person</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Public engagement events as part of consultations.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Phone</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Public enquiries about the local plan.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Email</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Public enquiries about the local plan.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Letter</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Notifying people about the proposed plan consultation.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Online</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Notices, call for sites, publication of documents and
+                        every plan consultation.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Social media</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Promoting plan consultations to reach more people.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Third-party channels</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Political engagement with the plan-making process and
+                        key issues.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Video</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Meetings with prescribed bodies and virtual examination
+                        hearings.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-2"
+                  >
+                    Council Interfaces
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-2"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >Human</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Officers supporting neighbourhood forums and answering
+                        plan enquiries.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >Websites</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Notices, the Gateway 1 summary, consultations, the
+                        examination library, the adopted plan and monitoring
+                        reports.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-3"
+                  >
+                    Capabilities
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-3"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Booking</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Scheduling examination hearings.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Email</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Engaging prescribed bodies, neighbourhood forums and
+                        giving policy advice to DM.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Forms</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Call for sites process and consultation submissions.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Workflow</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Workflow is managed via bespoke project management.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-4"
+                  >
+                    Business Areas
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-4"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--business-area"
+                          >Democratic services</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Plan progress review and adoption at full council and
+                        committee meetings.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--business-area"
+                          >Planning and development</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Policy team consulted by DM, an internal dependency
+                        within the business area.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-5"
+                  >
+                    Corporate Areas
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-5"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Business planning and performance</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Gateway progression, meeting 30 month timelines,
+                        monitoring reports and plan review.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Communications and PR</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Publicising the notice to commence and plan
+                        consultations.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Corporate governance and risk</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Constitutional process for adopting the plan.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Financial</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Funding evidence studies.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Geographical</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Call-for-sites mapping, site assessment, the policies
+                        map and area-based land charges.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Legal and compliance</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Redacting consultation responses, advising on compliance
+                        with regulations and defending legal challenges.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Procurement (B2B)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Commissioning evidence studies and environmental
+                        assessments from consultants.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-6"
+                  >
+                    Foundational Technology
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-6"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Conversational AI</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Chatbot for local plan enquiries.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Generative AI</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Summarising large volumes of representations and
+                        drafting policy.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Unified communications</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Meetings with neighbouring councils and prescribed
+                        bodies.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Productivity</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Shared workspace for drafting the plan, policies and
+                        supplementary plans, especially when working on joint
+                        local plans across organisation boundaries.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Application portfolio</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Recording the policy, consultation and plan-data
+                        systems.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Compute, storage, and network services</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Hosting the policy and consultation systems.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-7"
+                  >
+                    Integration
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-7"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >Data integration and pipelines (ETL/ELT)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Publishing timetable, plan, policies map and register
+                        datasets; pulling in completions data.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >File transfer management</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Sending gateway and examination submissions to PINS.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >Integration governance and tooling</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Integration standards for the policy and consultation
+                        systems.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >Partner (B2B) integration</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        PINS gateways and examination, and the HMLR register for
+                        area-based charges.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-8"
+                  >
+                    Security
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-8"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--security"
+                          >Application and data security</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Protecting consultation and personal data.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--security"
+                          >Security operations and monitoring (SOC)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Security monitoring of the policy and consultation
+                        systems.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-9"
+                  >
+                    Data and Information
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-9"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Planning Policy
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Business intelligence and analytics</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Site assessment, land supply, the monitoring report, the
+                        IFS and plan review.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Data catalogue &amp; metadata management</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Metadata for plan and timetable datasets.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Data governance and quality</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Data standards for the plan timetable, and records
+                        retention.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Data science and predictive analytics</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Site assessment and housing land supply forecasting.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Data storage and warehousing</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Brownfield land and self-build registers.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Document and records management</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Evidence base, representations, gateway and examination
+                        documents, and the plan itself.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Enterprise search and data indexing</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Searching and theming representations.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Geospatial data</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Call for sites, site assessment, the policies map,
+                        supplementary plans, registers and area-based charges.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
 

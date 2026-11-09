@@ -45,6 +45,29 @@
         margin: 30px 0;
         overflow-x: auto;
       }
+
+      /* On-page contents list (GOV.UK contents list pattern) */
+      .app-contents-list {
+        margin-bottom: 40px;
+      }
+      .app-contents-list__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      .app-contents-list__list-item {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 25px;
+      }
+      .app-contents-list__list-item::before {
+        content: "\2014";
+        content: "\2014" / "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        overflow: hidden;
+      }
     </style>
   </head>
 
@@ -149,13 +172,15 @@
             <a class="app-navigation__link" href="#about">About this journey</a>
           </li>
           <li class="app-navigation__item">
-            <a class="app-navigation__link" href="#lgam-stack"
-              >The LGAM technology stack</a
+            <a class="app-navigation__link" href="#the-journey"
+              >Business process and user journey</a
             >
           </li>
           <li class="app-navigation__item">
-            <a class="app-navigation__link" href="#the-journey"
-              >Business process and user journey</a
+            <a
+              class="app-navigation__link"
+              href="#what-makes-building-control-different"
+              >What makes building control different</a
             >
           </li>
           <li class="app-navigation__item">
@@ -164,10 +189,8 @@
             >
           </li>
           <li class="app-navigation__item">
-            <a
-              class="app-navigation__link"
-              href="#what-makes-building-control-different"
-              >What makes building control different</a
+            <a class="app-navigation__link" href="#lgam-stack"
+              >The LGAM technology stack</a
             >
           </li>
         </ul>
@@ -273,8 +296,39 @@
         >
         <h1 class="govuk-heading-xl">Building Control</h1>
 
+        <nav class="app-contents-list" aria-labelledby="contents-list-heading">
+          <h2
+            class="govuk-heading-s govuk-!-margin-bottom-3"
+            id="contents-list-heading"
+          >
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li class="app-contents-list__list-item govuk-body">
+              <a class="govuk-link" href="#the-journey">Business process</a>
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a
+                class="govuk-link"
+                href="#what-makes-building-control-different"
+                >What makes building control technically different</a
+              >
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a class="govuk-link" href="#target-data">Target data models</a>
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a
+                class="govuk-link"
+                href="#lgam-stack"
+                >The LGAM technology stack</a
+              >
+            </li>
+          </ol>
+        </nav>
+
         <section id="about">
-          <p class="govuk-body govuk-!-font-size-24">
+          <p class="govuk-body">
             The technical architecture supporting the enforcement of building
             regulations, structural safety, and on-site compliance inspections.
           </p>
@@ -290,671 +344,6 @@
             this service, as building control functions compete with the private
             sector for some of their work.
           </p>
-        </section>
-
-        <hr
-          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
-        />
-
-        <section id="lgam-stack">
-          <h2 class="govuk-heading-l">The LGAM technology stack</h2>
-          <p class="govuk-body">
-            Delivering this journey requires specific capabilities focused
-            heavily on mobile workforce enablement and secure data storage.
-          </p>
-
-          <div
-            class="govuk-accordion govuk-!-margin-bottom-8"
-            data-module="govuk-accordion"
-            id="accordion-lgam-stack"
-          >
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-1"
-                  >
-                    Public Channels
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-1"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Building Control
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >In person</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        On-site inspections of building works, and attending
-                        dangerous structures.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Phone</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Advice calls, booking site inspections, 24/7
-                        dangerous-structure reports and copy-certificate
-                        requests.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Email</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Receipt of additional and updated plans.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Letter</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Completion certificates, compliance or stop notices, and
-                        demolition counter-notices.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Online</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Applications and inspection booking.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-2"
-                  >
-                    Council Interfaces
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-2"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Building Control
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >Apps</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Mobile inspection app used on site, which must work
-                        offline.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >Automated phones</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Out-of-hours line for dangerous-structure reports.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >Human</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Inspectors giving advice and answering enquiries.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >Websites</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Applications and any public building control register
-                        (if used).
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-3"
-                  >
-                    Capabilities
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-3"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Building Control
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Booking</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Booking site inspections.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Email</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Advice, consultations, further-information requests,
-                        decisions and site instructions.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Forms</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Applications, commencement and stage notices, demolition
-                        notices and change of duty holder reports.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Identity</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Verify building inspectors' registration when handling
-                        RBCA notices.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Payments</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Plan and inspection charges (set locally) and
-                        copy-certificate fees.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Messaging</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Inspection reminders and site instructions.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Telephony and fax</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        24/7 emergency response to dangerous structures.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Workflow</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Case management by route (full plans, building notice,
-                        regularisation) through to completion, and allocation by
-                        capability.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-4"
-                  >
-                    Corporate Areas
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-4"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Building Control
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Business planning and performance</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Operational Standards Rules KPI returns to the Building
-                        Safety Regulator.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Customer relationship (B2C)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Customer contact for enquiries. Also matters
-                        commercially, because the service competes with private
-                        approvers.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Financial</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Charges and recovering the costs of emergency works.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Geographical</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Address and constraint checks, including higher-risk
-                        building identification.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Legal and compliance</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Compliance and stop notices.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Human resources and workforce</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        RBI registration and competence records, used for
-                        allocating work.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-5"
-                  >
-                    Foundational Technology
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-5"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Building Control
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Generative AI</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Supporting plan checks against the Building Regulations.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >End-user devices</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Devices for site inspections and out-of-hours call-outs.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Knowledge management</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Technical guidance (Approved Documents) for plan checks.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Application portfolio</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Recording the building control back-office (often shared
-                        with DM).
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >IT operations and service desk</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Service desk support for the building control
-                        back-office.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Compute, storage, and network services</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Hosting the building control back-office.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-6"
-                  >
-                    Integration
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-6"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Building Control
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >Integration governance and tooling</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Integration standards for the building control
-                        back-office.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >Partner (B2B) integration</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Submission service feeds (commercial), RBCA notices and
-                        certificate requests, fire authority and water company
-                        consultations, and the Building Safety Regulator.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-7"
-                  >
-                    Security
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-7"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Building Control
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--security"
-                          >Application and data security</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Protecting case and inspection data.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--security"
-                          >Security operations and monitoring (SOC)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Security monitoring of the building control back-office.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-8"
-                  >
-                    Data and Information
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-8"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Building Control
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Business intelligence and analytics</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        KPI reporting to the Building Safety Regulator.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Data governance and quality</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Records retention.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Data storage and warehousing</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Case register, RBCA notices, the public register and
-                        competence records.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Document and records management</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Drawings, inspection photos, certificates and notices.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Enterprise search and data indexing</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Searching building control history for constraint checks
-                        and CON29.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Geospatial data</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Constraint checks and inspection locations.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
         </section>
 
         <hr
@@ -3680,21 +3069,6 @@
           class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
         />
 
-        <section id="target-data">
-          <h2 class="govuk-heading-l">Target data models</h2>
-          <p class="govuk-body">
-            There are not yet published data standards for storing and sharing
-            building control information. However, these are currently being
-            developed, and thinking about how you could align to them over time
-            will help you share information with partners in both central and
-            local government.
-          </p>
-        </section>
-
-        <hr
-          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
-        />
-
         <section id="what-makes-building-control-different">
           <h2 class="govuk-heading-l">
             What makes building control technically different
@@ -3893,6 +3267,686 @@
                 support.
               </li>
             </ul>
+          </div>
+        </section>
+
+        <hr
+          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+        />
+
+        <section id="target-data">
+          <h2 class="govuk-heading-l">Target data models</h2>
+          <p class="govuk-body">
+            There are not yet published data standards for storing and sharing
+            building control information. However, these are currently being
+            developed, and thinking about how you could align to them over time
+            will help you share information with partners in both central and
+            local government.
+          </p>
+        </section>
+
+        <hr
+          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+        />
+
+        <section id="lgam-stack">
+          <h2 class="govuk-heading-l">The LGAM technology stack</h2>
+          <p class="govuk-body">
+            Delivering this journey requires specific capabilities focused
+            heavily on mobile workforce enablement and secure data storage.
+          </p>
+
+          <div
+            class="govuk-accordion govuk-!-margin-bottom-8"
+            data-module="govuk-accordion"
+            id="accordion-lgam-stack"
+          >
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-1"
+                  >
+                    Public Channels
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-1"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Building Control
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >In person</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        On-site inspections of building works, and attending
+                        dangerous structures.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Phone</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Advice calls, booking site inspections, 24/7
+                        dangerous-structure reports and copy-certificate
+                        requests.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Email</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Receipt of additional and updated plans.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Letter</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Completion certificates, compliance or stop notices, and
+                        demolition counter-notices.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Online</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Applications and inspection booking.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-2"
+                  >
+                    Council Interfaces
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-2"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Building Control
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >Apps</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Mobile inspection app used on site, which must work
+                        offline.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >Automated phones</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Out-of-hours line for dangerous-structure reports.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >Human</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Inspectors giving advice and answering enquiries.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >Websites</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Applications and any public building control register
+                        (if used).
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-3"
+                  >
+                    Capabilities
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-3"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Building Control
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Booking</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Booking site inspections.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Email</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Advice, consultations, further-information requests,
+                        decisions and site instructions.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Forms</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Applications, commencement and stage notices, demolition
+                        notices and change of duty holder reports.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Identity</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Verify building inspectors' registration when handling
+                        RBCA notices.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Payments</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Plan and inspection charges (set locally) and
+                        copy-certificate fees.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Messaging</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Inspection reminders and site instructions.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Telephony and fax</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        24/7 emergency response to dangerous structures.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Workflow</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Case management by route (full plans, building notice,
+                        regularisation) through to completion, and allocation by
+                        capability.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-4"
+                  >
+                    Corporate Areas
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-4"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Building Control
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Business planning and performance</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Operational Standards Rules KPI returns to the Building
+                        Safety Regulator.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Customer relationship (B2C)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Customer contact for enquiries. Also matters
+                        commercially, because the service competes with private
+                        approvers.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Financial</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Charges and recovering the costs of emergency works.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Geographical</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Address and constraint checks, including higher-risk
+                        building identification.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Legal and compliance</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Compliance and stop notices.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Human resources and workforce</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        RBI registration and competence records, used for
+                        allocating work.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-5"
+                  >
+                    Foundational Technology
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-5"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Building Control
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Generative AI</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Supporting plan checks against the Building Regulations.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >End-user devices</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Devices for site inspections and out-of-hours call-outs.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Knowledge management</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Technical guidance (Approved Documents) for plan checks.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Application portfolio</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Recording the building control back-office (often shared
+                        with DM).
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >IT operations and service desk</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Service desk support for the building control
+                        back-office.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Compute, storage, and network services</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Hosting the building control back-office.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-6"
+                  >
+                    Integration
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-6"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Building Control
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >Integration governance and tooling</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Integration standards for the building control
+                        back-office.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >Partner (B2B) integration</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Submission service feeds (commercial), RBCA notices and
+                        certificate requests, fire authority and water company
+                        consultations, and the Building Safety Regulator.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-7"
+                  >
+                    Security
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-7"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Building Control
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--security"
+                          >Application and data security</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Protecting case and inspection data.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--security"
+                          >Security operations and monitoring (SOC)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Security monitoring of the building control back-office.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-8"
+                  >
+                    Data and Information
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-8"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Building Control
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Business intelligence and analytics</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        KPI reporting to the Building Safety Regulator.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Data governance and quality</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Records retention.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Data storage and warehousing</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Case register, RBCA notices, the public register and
+                        competence records.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Document and records management</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Drawings, inspection photos, certificates and notices.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Enterprise search and data indexing</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Searching building control history for constraint checks
+                        and CON29.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Geospatial data</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Constraint checks and inspection locations.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
 

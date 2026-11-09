@@ -49,6 +49,29 @@
       .confidence-tag--provisional {
         background: #1d70b8;
       }
+
+      /* On-page contents list (GOV.UK contents list pattern) */
+      .app-contents-list {
+        margin-bottom: 40px;
+      }
+      .app-contents-list__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      .app-contents-list__list-item {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 25px;
+      }
+      .app-contents-list__list-item::before {
+        content: "\2014";
+        content: "\2014" / "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        overflow: hidden;
+      }
     </style>
   </head>
 
@@ -153,13 +176,25 @@
             <a class="app-navigation__link" href="#about">About this journey</a>
           </li>
           <li class="app-navigation__item">
-            <a class="app-navigation__link" href="#lgam-stack"
-              >The LGAM technology stack</a
+            <a class="app-navigation__link" href="#the-journey"
+              >Business process and user journey</a
             >
           </li>
           <li class="app-navigation__item">
-            <a class="app-navigation__link" href="#the-journey"
-              >Business process and user journey</a
+            <a
+              class="app-navigation__link"
+              href="#what-makes-planning-different"
+              >What makes planning different</a
+            >
+          </li>
+          <li class="app-navigation__item">
+            <a class="app-navigation__link" href="#target-data"
+              >Target data models</a
+            >
+          </li>
+          <li class="app-navigation__item">
+            <a class="app-navigation__link" href="#lgam-stack"
+              >The LGAM technology stack</a
             >
           </li>
         </ul>
@@ -265,8 +300,39 @@
         >
         <h1 class="govuk-heading-xl">Development Management</h1>
 
+        <nav class="app-contents-list" aria-labelledby="contents-list-heading">
+          <h2
+            class="govuk-heading-s govuk-!-margin-bottom-3"
+            id="contents-list-heading"
+          >
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li class="app-contents-list__list-item govuk-body">
+              <a class="govuk-link" href="#the-journey">Business process</a>
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a
+                class="govuk-link"
+                href="#what-makes-planning-different"
+                >What makes planning technically different</a
+              >
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a class="govuk-link" href="#target-data">Target data models</a>
+            </li>
+            <li class="app-contents-list__list-item govuk-body">
+              <a
+                class="govuk-link"
+                href="#lgam-stack"
+                >The LGAM technology stack</a
+              >
+            </li>
+          </ol>
+        </nav>
+
         <section id="about">
-          <p class="govuk-body govuk-!-font-size-24">
+          <p class="govuk-body">
             This page covers the technical architecture supporting development
             management. The architecture describes the lifecycle of an
             individual planning application—from the citizen's initial
@@ -279,825 +345,6 @@
             processing. It represents the bulk of a council's planning
             technology expenditure.
           </p>
-        </section>
-
-        <hr
-          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
-        />
-
-        <section id="lgam-stack">
-          <h2 class="govuk-heading-l">The LGAM technology stack</h2>
-          <p class="govuk-body">
-            Delivering this journey requires orchestrating multiple components
-            across the LGAM taxonomy. An API-first architecture decouples these
-            capabilities rather than purchasing them as a single monolithic
-            system.
-          </p>
-
-          <div
-            class="govuk-accordion govuk-!-margin-bottom-8"
-            data-module="govuk-accordion"
-            id="accordion-lgam-stack"
-          >
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-1"
-                  >
-                    Public Channels
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-1"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >In person</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Officers undertake site visits, enforcement visits and
-                        some pre-application meetings in-person.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Phone</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Applicant case status requests and public enquiries for
-                        advice.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Email</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        General communications, file sharing and
-                        invalid-application notices.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Letter</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Statutory neighbour letters, decision notices,
-                        enforcement notices and appeal notifications.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Online</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Main route for pre-app requests, applications, public
-                        comments, breach reports and land charges searches,
-                        sometimes via third-party tools.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Third-party channels</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Councillors and MPs reporting suspected breaches on
-                        residents' behalf.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--channel"
-                          >Video</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Remote pre-application meetings dependent on local
-                        service offering.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-2"
-                  >
-                    Council Interfaces
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-2"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >API gateways</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Machine-to-machine intake of applications from
-                        third-party commercial submission services.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >Human</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Duty planners and case officers answering enquiries.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--interface"
-                          >Websites</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Planning application advice webpages, publicly
-                        accessible register of applications and portal for
-                        comments, pre-app requests.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-3"
-                  >
-                    Capabilities
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-3"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Booking</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Booking pre-application meetings and site visits.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Email</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Advice, acknowledgements, consultations, negotiation,
-                        decision notices and appeal notifications.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Forms</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Pre-app requests, applications, public comments,
-                        condition discharges, amendments and breach reports.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Identity</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Some submission services and public comment tools use
-                        authenticated accounts.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Payments</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Payment of pre-app fees, application fees (set
-                        nationally), condition discharge fees, S106/CIL
-                        receipts.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Messaging</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Status updates to applicants.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--capability"
-                          >Workflow</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Case management from validation to decision, plus
-                        post-decision and enforcement sub-cases.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-4"
-                  >
-                    Business Areas
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-4"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--business-area"
-                          >Democratic services</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Planning committee for applications not decided under
-                        delegated powers.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--business-area"
-                          >Highways and transport</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Highways as a consultee on applications and a source of
-                        CON29 road-scheme answers.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--business-area"
-                          >Licensing and regulation</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Environmental Health as an internal consultee (noise,
-                        contamination, air quality).
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-5"
-                  >
-                    Corporate Areas
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-5"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Business planning and performance</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        PS1/PS2 statutory returns to MHCLG.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Communications and PR</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Press notices for applications.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Corporate governance and risk</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Scheme of delegation and committee governance.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Customer relationship (B2C)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Customer contact for enquiries and breach reports.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Financial</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Fees, S106 and CIL income, appeal costs and the costs of
-                        direct action.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Geographical</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        UPRN/LLPG, constraint layers, neighbour identification
-                        and land charge extents.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--corporate"
-                          >Legal and compliance</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Support for the service around appeals and other legal
-                        issues related to process and enforcement.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-6"
-                  >
-                    Foundational Technology
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-6"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Conversational AI</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Chatbot for applicant and public enquiries.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Generative AI</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Drafting advice and officer reports, and supporting
-                        validation and assessment.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Intelligent automation</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Automating validation checks.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Unified communications</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Online pre-application meetings.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >End-user devices</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Devices for officer site visits and enforcement
-                        investigations.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Knowledge management</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Policy guidance and precedent for assessing
-                        applications.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Productivity</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Templates or automation tools to reduce time writing
-                        officer reports.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Application portfolio</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Recording the planning back-office in the application
-                        portfolio.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >IT operations and service desk</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Service desk support for the planning back-office.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--technology"
-                          >Compute, storage, and network services</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Hosting the planning back-office and public register.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-7"
-                  >
-                    Integration
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-7"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >Data integration and pipelines (ETL/ELT)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Publishing application and decision data to the Planning
-                        Data Platform, and statutory returns.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >File transfer management</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Exchanging document bundles (supporting documents,
-                        appeal files).
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >Integration governance and tooling</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Integration standards for the planning back-office.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--integration"
-                          >Partner (B2B) integration</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Submission service feeds (commercial), statutory
-                        consultees, PINS appeals and the HMLR land charges
-                        register.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-8"
-                  >
-                    Security
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-8"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--security"
-                          >Application and data security</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Protecting case data and the public register.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--security"
-                          >Identity and access management (IAM)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Authorisation checks for decisions made under delegated
-                        powers.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--security"
-                          >Security operations and monitoring (SOC)</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Security monitoring of the planning back-office.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h3 class="govuk-accordion__section-heading">
-                  <span
-                    class="govuk-accordion__section-button"
-                    id="accordion-lgam-stack-heading-9"
-                  >
-                    Data and Information
-                  </span>
-                </h3>
-              </div>
-              <div
-                id="accordion-lgam-stack-content-9"
-                class="govuk-accordion__section-content"
-              >
-                <table class="govuk-table govuk-!-margin-bottom-0">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">LGAM node</th>
-                      <th scope="col" class="govuk-table__header">
-                        What this means for Development Management
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Business intelligence and analytics</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Internal performance management, S106/CIL monitoring and
-                        PS1/PS2 returns.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Data governance and quality</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Data standards for published data and records retention.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Data storage and warehousing</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Case register and appeal outcomes.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Document and records management</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        The core case file: plans, reports, notices, agreements
-                        and appeal bundles.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Enterprise search and data indexing</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Searching planning history, the public register and
-                        CON29 answers.
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                        <span class="govuk-tag lgam-tag--data"
-                          >Geospatial data</span
-                        >
-                      </td>
-                      <td class="govuk-table__cell">
-                        Constraints, neighbour areas, site visits, BNG and land
-                        charge extents.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
         </section>
 
         <hr
@@ -1724,7 +971,7 @@
                       settled before officer assessment begins. This involves
                       checking architectural plans, validating ownership
                       certificates, calculating fees, and drawing the site
-                      boundary polygons into the corporate GIS system.
+                      boundary polygons into the corporate GIS.
                     </p>
                     <p class="govuk-body govuk-!-margin-bottom-2">
                       <strong>Required LGAM Taxonomy Nodes:</strong>
@@ -3289,22 +2536,9 @@
           </div>
         </section>
 
-        <hr class="govuk-section-break govuk-section-break--l" />
-
-        <section id="target-data">
-          <h2 class="govuk-heading-l">Target data models</h2>
-          <p class="govuk-body">
-            When procuring or configuring systems for Development Management, the architecture
-            must align with the national data schemas maintained by MHCLG on
-            <a href="https://planning.data.gov.uk/" class="govuk-link"
-              >planning.data.gov.uk</a
-            >. Treating these schemas as your target data model ensures
-            automated interoperability with central government and
-            neighbouring authorities.
-          </p>
-        </section>
-
-        <hr class="govuk-section-break govuk-section-break--xl" />
+        <hr
+          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+        />
 
         <section id="what-makes-planning-different">
           <h2 class="govuk-heading-l">
@@ -3470,6 +2704,842 @@
                 data extraction complexity.
               </li>
             </ul>
+          </div>
+        </section>
+
+        <hr
+          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+        />
+
+        <section id="target-data">
+          <h2 class="govuk-heading-l">Target data models</h2>
+          <p class="govuk-body">
+            When procuring or configuring systems for Development Management, the architecture
+            must align with the national data schemas maintained by MHCLG on
+            <a href="https://planning.data.gov.uk/" class="govuk-link"
+              >planning.data.gov.uk</a
+            >. Treating these schemas as your target data model ensures
+            automated interoperability with central government and
+            neighbouring authorities.
+          </p>
+        </section>
+
+        <hr
+          class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+        />
+
+        <section id="lgam-stack">
+          <h2 class="govuk-heading-l">The LGAM technology stack</h2>
+          <p class="govuk-body">
+            Delivering this journey requires orchestrating multiple components
+            across the LGAM taxonomy. An API-first architecture decouples these
+            capabilities rather than purchasing them as a single monolithic
+            system.
+          </p>
+
+          <div
+            class="govuk-accordion govuk-!-margin-bottom-8"
+            data-module="govuk-accordion"
+            id="accordion-lgam-stack"
+          >
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-1"
+                  >
+                    Public Channels
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-1"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >In person</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Officers undertake site visits, enforcement visits and
+                        some pre-application meetings in-person.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Phone</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Applicant case status requests and public enquiries for
+                        advice.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Email</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        General communications, file sharing and
+                        invalid-application notices.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Letter</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Statutory neighbour letters, decision notices,
+                        enforcement notices and appeal notifications.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Online</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Main route for pre-app requests, applications, public
+                        comments, breach reports and land charges searches,
+                        sometimes via third-party tools.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Third-party channels</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Councillors and MPs reporting suspected breaches on
+                        residents' behalf.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--channel"
+                          >Video</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Remote pre-application meetings dependent on local
+                        service offering.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-2"
+                  >
+                    Council Interfaces
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-2"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >API gateways</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Machine-to-machine intake of applications from
+                        third-party commercial submission services.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >Human</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Duty planners and case officers answering enquiries.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--interface"
+                          >Websites</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Planning application advice webpages, publicly
+                        accessible register of applications and portal for
+                        comments, pre-app requests.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-3"
+                  >
+                    Capabilities
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-3"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Booking</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Booking pre-application meetings and site visits.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Email</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Advice, acknowledgements, consultations, negotiation,
+                        decision notices and appeal notifications.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Forms</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Pre-app requests, applications, public comments,
+                        condition discharges, amendments and breach reports.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Identity</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Some submission services and public comment tools use
+                        authenticated accounts.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Payments</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Payment of pre-app fees, application fees (set
+                        nationally), condition discharge fees, S106/CIL
+                        receipts.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Messaging</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Status updates to applicants.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--capability"
+                          >Workflow</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Case management from validation to decision, plus
+                        post-decision and enforcement sub-cases.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-4"
+                  >
+                    Business Areas
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-4"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--business-area"
+                          >Democratic services</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Planning committee for applications not decided under
+                        delegated powers.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--business-area"
+                          >Highways and transport</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Highways as a consultee on applications and a source of
+                        CON29 road-scheme answers.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--business-area"
+                          >Licensing and regulation</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Environmental Health as an internal consultee (noise,
+                        contamination, air quality).
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-5"
+                  >
+                    Corporate Areas
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-5"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Business planning and performance</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        PS1/PS2 statutory returns to MHCLG.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Communications and PR</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Press notices for applications.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Corporate governance and risk</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Scheme of delegation and committee governance.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Customer relationship (B2C)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Customer contact for enquiries and breach reports.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Financial</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Fees, S106 and CIL income, appeal costs and the costs of
+                        direct action.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Geographical</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        UPRN/LLPG, constraint layers, neighbour identification
+                        and land charge extents.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--corporate"
+                          >Legal and compliance</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Support for the service around appeals and other legal
+                        issues related to process and enforcement.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-6"
+                  >
+                    Foundational Technology
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-6"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Conversational AI</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Chatbot for applicant and public enquiries.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Generative AI</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Drafting advice and officer reports, and supporting
+                        validation and assessment.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Intelligent automation</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Automating validation checks.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Unified communications</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Online pre-application meetings.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >End-user devices</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Devices for officer site visits and enforcement
+                        investigations.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Knowledge management</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Policy guidance and precedent for assessing
+                        applications.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Productivity</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Templates or automation tools to reduce time writing
+                        officer reports.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Application portfolio</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Recording the planning back-office in the application
+                        portfolio.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >IT operations and service desk</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Service desk support for the planning back-office.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--technology"
+                          >Compute, storage, and network services</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Hosting the planning back-office and public register.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-7"
+                  >
+                    Integration
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-7"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >Data integration and pipelines (ETL/ELT)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Publishing application and decision data to the Planning
+                        Data Platform, and statutory returns.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >File transfer management</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Exchanging document bundles (supporting documents,
+                        appeal files).
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >Integration governance and tooling</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Integration standards for the planning back-office.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--integration"
+                          >Partner (B2B) integration</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Submission service feeds (commercial), statutory
+                        consultees, PINS appeals and the HMLR land charges
+                        register.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-8"
+                  >
+                    Security
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-8"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--security"
+                          >Application and data security</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Protecting case data and the public register.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--security"
+                          >Identity and access management (IAM)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Authorisation checks for decisions made under delegated
+                        powers.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--security"
+                          >Security operations and monitoring (SOC)</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Security monitoring of the planning back-office.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h3 class="govuk-accordion__section-heading">
+                  <span
+                    class="govuk-accordion__section-button"
+                    id="accordion-lgam-stack-heading-9"
+                  >
+                    Data and Information
+                  </span>
+                </h3>
+              </div>
+              <div
+                id="accordion-lgam-stack-content-9"
+                class="govuk-accordion__section-content"
+              >
+                <table class="govuk-table govuk-!-margin-bottom-0">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">LGAM node</th>
+                      <th scope="col" class="govuk-table__header">
+                        What this means for Development Management
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Business intelligence and analytics</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Internal performance management, S106/CIL monitoring and
+                        PS1/PS2 returns.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Data governance and quality</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Data standards for published data and records retention.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Data storage and warehousing</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Case register and appeal outcomes.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Document and records management</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        The core case file: plans, reports, notices, agreements
+                        and appeal bundles.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Enterprise search and data indexing</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Searching planning history, the public register and
+                        CON29 answers.
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <span class="govuk-tag lgam-tag--data"
+                          >Geospatial data</span
+                        >
+                      </td>
+                      <td class="govuk-table__cell">
+                        Constraints, neighbour areas, site visits, BNG and land
+                        charge extents.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
 
